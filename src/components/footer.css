@@ -1,0 +1,36 @@
+/* hover des icones des réseaux sociaux et boutons */
+#footer {
+  background-color: #838181;
+}
+a.btn-hover:hover {
+  background-color: #e30964;
+  border-color: #e30964;
+}
+button.btn-hover:hover {
+  background-color: #e30964;
+  border-color: #e30964;
+}
+
+/* hover des liens du footer */
+ul a {
+  text-decoration: none;
+  position: relative;
+}
+.a_after_hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  margin-bottom: -2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 0.3s;
+}
+.a_after_hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s;
+}

@@ -3,49 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-img {
-  max-width: 100%;
-}
-.allArticle {
-  border: red 2px solid;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-.allArticle img {
-  padding: 5px 20px 0px 20px;
-}
-
-.allArticle h1 {
-  font-size: 22px;
-  margin: 0px 10px 10px 0px;
-  padding: 0 10px;
-  color: #fff;
-  line-height: 29px;
-  letter-spacing: 0.12em;
-  background: #000;
-}
-.Article:hover {
-  transform: scale(1.1);
-  transition: all 0.5s;
-  margin-top: 15px;
-}
-.Article {
-  border: black 2px solid;
-  height: 320px;
-  width: 300px;
-  padding: 10px;
-  cursor: pointer;
-}
-.Article__details {
-  display: flex;
-  justify-content: space-between;
-}
-.Description {
-  width: 290px;
-}
-.Article__picture p {
-  color: grey;
-  font-size: 10px;
-  margin: 0px 0px 0px 20px;
+.wrapper__homePage {
+  background-image: url("./assets/background_comics_pc.jpg");
+  background-repeat: repeat;
+  height: 100vh;
+  overflow: scroll;
+  scroll-behavior: smooth;
 }

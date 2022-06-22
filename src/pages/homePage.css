@@ -1,0 +1,7 @@
+#wrapper__homePage {
+  background-image: url("../assets/background_comics_pc.jpg");
+  background-repeat: repeat;
+  height: 80vh;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}

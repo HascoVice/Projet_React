@@ -1,0 +1,161 @@
+/* header CSS */
+.section__headerNav {
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 2vh 0.5vh 2vh;
+  color: white;
+  background-color: #838181;
+}
+.header h1 {
+  font-family: "oswald";
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+  transform: scaleX(3);
+  margin-left: 10%;
+}
+
+.header__logo {
+  display: flex;
+  gap: 1.5vw;
+  align-items: center;
+  font-size: large;
+  cursor: pointer;
+}
+
+.logo__picture img {
+  min-width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+}
+
+/* CSS nav barre dans le header*/
+
+.header__nav__icone {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 10px;
+}
+.nav__loupe {
+  width: 1.875rem;
+  height: 1.875rem;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 13px;
+}
+
+.nav__burger {
+  display: none;
+}
+.nav__burger span {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+header nav {
+  display: none;
+  padding: 0.938rem 0 0.938rem 0;
+  position: absolute;
+  top: 0;
+  bottom: 100%;
+  transition: all 30s ease-in-out;
+}
+.nav__menuDeroulant {
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+.nav__menuDeroulant > ul {
+  display: flex;
+}
+.nav__menuDeroulant li {
+  margin-right: 0.938rem;
+  padding: 0.313rem;
+}
+a.menuDeroulant__link {
+  text-decoration: none;
+  color: white;
+  font-size: 0.938rem;
+}
+
+.nav__menuDeroulant.active {
+  display: block;
+  cursor: pointer;
+}
+a.menuDeroulant__link.active {
+  padding: 0.675rem 1.25rem;
+}
+.menuDeroulant__link:hover {
+  padding: 0.675rem 5rem;
+  background-color: #87735c;
+  font-size: medium;
+}
+
+header nav.active {
+  display: block;
+  top: 9vh;
+  left: 0;
+  bottom: 60vh;
+  width: 100%;
+  height: fit-content;
+  background-color: #1b1d31;
+  z-index: 9000;
+  transform: translateX(0);
+}
+
+/* CSS navBar */
+
+.nav-pills .nav-link {
+  font-family: "oswald";
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+  padding: 0.6rem 0.6rem;
+  margin: 0;
+  background: #e30964;
+  border-radius: 0;
+  border: 0;
+  letter-spacing: 0.02em;
+  line-height: 31px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav-pills .nav-link.active {
+  background-color: #838181;
+  color: black;
+  transition: background-color 1s;
+}
+
+.nav-item {
+  flex: 0;
+}
+.Nav-background {
+  background-color: #e30964;
+}
+.nav {
+  justify-content: center;
+}
+
+@media (max-width: 930px) {
+  .nav__burger {
+    display: block;
+    margin-top: -20px;
+  }
+  .Nav-background,
+  #nav {
+    display: none;
+  }
+}

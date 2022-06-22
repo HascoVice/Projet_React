@@ -1,55 +1,45 @@
 import "./App.css";
+import HomePage from "../src/pages/homePage";
+import { Switch, Route } from "react-router-dom";
+import CategoriePage from "../src/pages/categoriePage";
+import ShoppingCartPage from "../src/pages/shoppingCartPage";
+import News from "../src/pages/news";
+import Contact from "../src/pages/contact";
+import HeaderNav from "./components/headerNav";
+import Footer from "./components/footer";
 
 function App() {
   return (
-    <div className="allArticle">
-      <div className="Article">
-        <div className="Article__details">
-          <h1>Title 1</h1>
-          <p>01.05.2022</p>
-        </div>
-        <div className="Article__picture">
-          <img src="https://placewaifu.com/image/500/272" />
-          <p>niah niah niouh ninano</p>
-        </div>
-        <p className="Description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, neque
-          qui quaerat sed, architecto consectetur facilis sunt molestias eveniet
-          suscipit eius omnis illo rem. Et facilis eum minus. Ullam, amet?
-        </p>
+    <>
+      <div className="wrapper__homePage">
+        <HeaderNav />
+        <Switch>
+          <Route path="/" exact>
+            <HomePage />
+          </Route>
+          <Route path="/categoriePage/Figurines">
+            <CategoriePage />
+          </Route>
+          <Route path="/categoriePage/Vêtements">
+            <CategoriePage />
+          </Route>
+          <Route path="/categoriePage/Décorations">
+            <CategoriePage />
+          </Route>
+          <Route path="/News">
+            <News />
+          </Route>
+          <Route path="/Contact">
+            <Contact />
+          </Route>
+          <Route path="/Panier">
+            <ShoppingCartPage />
+          </Route>
+        </Switch>
+
+        <Footer />
       </div>
-      <div className="Article">
-        <div className="Article__details">
-          <h1>Title 1</h1>
-          <p>01.05.2022</p>
-        </div>
-        <div className="Article__picture">
-          <img src="https://placewaifu.com/image/500/272" />
-          <p>niah niah niouh ninano</p>
-        </div>
-        <p className="Description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officiis
-          nihil aspernatur eius suscipit necessitatibus, dolore magni dicta
-          harum sed sunt unde, non recusandae rem iste nobis laboriosam quas
-          ullam!
-        </p>
-      </div>
-      <div className="Article">
-        <div className="Article__details">
-          <h1>Title 1</h1>
-          <p>01.05.2022</p>
-        </div>
-        <div className="Article__picture">
-          <img src="https://placewaifu.com/image/500/272" />
-          <p>niah niah niouh ninano</p>
-        </div>
-        <p className="Description">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum
-          recusandae architecto veritatis, sapiente iste repellendus dolore
-          doloremque, harum tempora perspiciatis
-        </p>
-      </div>
-    </div>
+    </>
   );
 }
 
