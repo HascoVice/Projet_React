@@ -70,6 +70,7 @@ render(){
 
     let heart = 'heart is-active';
 		let buy = 'bottoom clicked';
+        let PriceRaye;
 
 		if(this.state.hasClicked === false){
 			heart = 'heart';
@@ -82,6 +83,9 @@ render(){
 		else if (this.state.hasClickedBuyNum % 2 === 1){
 			buy = 'bottoom clicked';
 		}
+        if(this.props.data.price >this.props.data.priceDiscount){
+            PriceRaye="PriceRaye"
+        }
 
     return(
         <div className="wrapper__card">
@@ -91,7 +95,10 @@ render(){
         <div className="left">
             <div className="details">
             <h1>{this.props.data.title}</h1>
-            <p>{this.props.data.price}</p>
+            <div className='allPrice'>
+            <p className={PriceRaye}>{this.props.data.price}</p>
+            <p className='priceDiscount'>{this.props.data.priceDiscount}</p>
+            </div>
             </div>
             <div onClick={ () => {this.Click_Buy_Stockage(); this.click_Buy();}} className="buy"><i className="material-icons">add_shopping_cart</i></div>
         </div>
