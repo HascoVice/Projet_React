@@ -1,6 +1,7 @@
 import Articles from "../components/articles";
 import Cards from "../components/bandeau_homePage";
 import Slider from "../components/Slider";
+import Reassur from "../components/reassur";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
@@ -17,6 +18,8 @@ function HomePage() {
       </section>
 
       <Articles />
+      <Reassur/>
+      
     </>
   );
 }

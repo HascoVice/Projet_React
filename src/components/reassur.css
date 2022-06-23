@@ -1,0 +1,30 @@
+* {
+  padding: 0%;
+  margin: 0;
+  box-sizing: border-box;
+}
+.flex-img {
+  display: flex;
+  justify-content: center;
+}
+svg {
+  max-width: 100%;
+}
+.div-img {
+  border: solid pink 2px;
+  background-color: #e60965;
+  width: 100px;
+  height: 100%;
+  padding: 0px 10px;
+  border-radius: 100%;
+}
+
+.wrap-reass {
+  display: flex;
+}
+.reassurance {
+  text-align: center;
+}
+.rea-title {
+  color: pink;
+}
