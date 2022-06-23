@@ -10,3 +10,6 @@
   overflow: scroll;
   scroll-behavior: smooth;
 }
+form {
+  display: flex;
+}

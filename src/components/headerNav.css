@@ -44,6 +44,13 @@
   justify-content: center;
   margin-top: 10px;
 }
+.header__nav__loggin {
+  display: flex;
+  justify-content: space-around;
+}
+.nav__panier {
+  display: none;
+}
 .nav__loupe {
   width: 1.875rem;
   height: 1.875rem;
@@ -157,5 +164,16 @@ header nav.active {
   .Nav-background,
   #nav {
     display: none;
+  }
+  .btn-panier {
+    display: none;
+  }
+  .nav__panier {
+    display: block;
+  }
+}
+@media (max-width: 810px) {
+  .header h1 {
+    font-size: 20px;
   }
 }

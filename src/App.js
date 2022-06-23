@@ -10,62 +10,52 @@ import HeaderNav from "./components/headerNav";
 import Footer from "./components/footer";
 
 class App extends React.Component {
+  state = {
+    search: "",
+  };
 
-  state={
-		search: '',
-	}
-
-  constructor(){
-    super()
-    this.test = this.test.bind(this)
-
+  constructor() {
+    super();
+    this.test = this.test.bind(this);
   }
 
-  test(data){
-		console.log('data' + data)
-		this.setState(()=>{
-			return {
-				search : data
-			}
-		})
-		
-	}
+  test(data) {
+    console.log("data" + data);
+    this.setState(() => {
+      return {
+        search: data,
+      };
+    });
+  }
 
-  render(){
+  render() {
     return (
-    <>
-      <div className="wrapper__homePage">
-        <HeaderNav func={this.test} />
-        <Switch>
-          <Route path="/" exact>
-            <HomePage />
-          </Route>
-          <Route path="/categoriePage/Figurines">
-            <CategoriePage bar={this.state.search} />
-          </Route>
-          <Route path="/categoriePage/Vêtements">
-            <CategoriePage bar={this.state.search} />
-          </Route>
-          <Route path="/categoriePage/Décorations">
-            <CategoriePage bar={this.state.search} />
-          </Route>
-          <Route path="/News">
-            <News />
-          </Route>
-          <Route path="/Contact">
-            <Contact />
-          </Route>
-          <Route path="/Panier">
-            <ShoppingCartPage />
-          </Route>
-        </Switch>
+      <>
+        <div className="wrapper__homePage">
+          <HeaderNav func={this.test} />
+          <Switch>
+            <Route path="/" exact>
+              <HomePage />
+            </Route>
+            <Route path="/categoriePage/Boutique">
+              <CategoriePage bar={this.state.search} />
+            </Route>
+            <Route path="/News">
+              <News />
+            </Route>
+            <Route path="/FAQ">
+              <Contact />
+            </Route>
+            <Route path="/Panier">
+              <ShoppingCartPage />
+            </Route>
+          </Switch>
 
-        <Footer />
-      </div>
-    </>
-  );
+          <Footer />
+        </div>
+      </>
+    );
   }
-  
 }
 
 export default App;

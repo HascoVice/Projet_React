@@ -12,7 +12,7 @@ function ModalConnexion() {
 
   return (
     <>
-      <Button id="btn__openModalConnexion" onClick={handleShow}>
+      <Button className="btn__openModalConnexion" onClick={handleShow}>
         Mon compte
       </Button>
 

@@ -10,100 +10,102 @@ import React from "react";
 import classNames from "classnames";
 
 class HeaderNav extends React.Component {
-
   state = {
     clicked: "",
-    input : ""
+    input: "",
   };
 
   constructor(props) {
     super(props);
-    this.searchPrevent = this.searchPrevent.bind(this)
-    this.searchBar = this.searchBar.bind(this)
-
+    this.searchPrevent = this.searchPrevent.bind(this);
+    this.searchBar = this.searchBar.bind(this);
   }
-
-
 
   handleClick = (name) => {
     this.setState({ clicked: name });
   };
 
   ////////
-  searchPrevent(event){
-      event.preventDefault();
-      this.props.func(this.state.input);
-      console.log(this.state.input)
+  searchPrevent(event) {
+    event.preventDefault();
+    this.props.func(this.state.input);
+    console.log(this.state.input);
   }
 
-  searchBar(event){
-          
-    this.setState(() =>{
-        return{
-            input: event.target.value
-            
-        }
-    })
+  searchBar(event) {
+    this.setState(() => {
+      return {
+        input: event.target.value,
+      };
+    });
   }
-/////////////
+  /////////////
   render() {
     return (
       <div className="section__headerNav">
         <header className="header">
           <div className="header__logo">
             <figure className="logo__picture">
-              <img  src={Logo} alt="logo MANFRA" />
+              <img src={Logo} alt="logo MANFRA" />
             </figure>
           </div>
 
           <h1>MANFRA</h1>
 
           <div className="header__nav">
-            <div className="header__nav__loggin">
-              <ModalConnexion />
-            </div>
-            <div className="header__nav__icone">
-              <form  /* Ceci est le form  */ onSubmit={this.searchPrevent} >
-              <input onChange={this.searchBar} type="text" className="form-control me-sm-2" placeholder="Search"/>
-              </form>
-              <Link className="header__nav" to="/panier">
-                <img className="nav__panier" src={Panier} alt="mon panier" />
-              </Link>
-              {/* burger menu en min-width 830px */}
-              <div className="nav__burger">
-                <span>☰</span>
-              </div>
-            </div>
+            <div className="header__nav__link">
+              <div className="header__nav__loggin">
+                <ModalConnexion />
 
-            <nav className="nav__hidden">
-              <ul className="nav__menuDeroulant">
-                <li>
-                  <a href="#" className="menuDeroulant__link">
-                    Accueil
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="menuDeroulant__link">
-                    Figurines
-                  </a>
-                </li>
-                <li>
-                  <a href="./search.html" className="menuDeroulant__link">
-                    Vêtements
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="menuDeroulant__link">
-                    Décorations
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="menuDeroulant__link">
-                    News
-                  </a>
-                </li>
-              </ul>
-            </nav>
+                <Link className="btn-primary btn-panier" to={"/Panier"}>
+                  Mon panier
+                </Link>
+                <Link className="header__nav" to="/panier">
+                  <img className="nav__panier" src={Panier} alt="mon panier" />
+                </Link>
+              </div>
+              <div className="header__nav__icone">
+                <form onSubmit={this.searchPrevent}>
+                  <input
+                    onChange={this.searchBar}
+                    type="text"
+                    className="form-control me-sm-2"
+                    placeholder="Search"
+                  />
+                  <button type="submit">
+                    <img
+                      className="nav__loupe"
+                      src={Loupe}
+                      alt="recherhcer"
+                    ></img>
+                  </button>
+                </form>
+
+                {/* burger menu en min-width 830px */}
+                <div className="nav__burger">
+                  <span>☰</span>
+                </div>
+              </div>
+              <nav className="nav__hidden">
+                <ul className="nav__menuDeroulant">
+                  <li>
+                    <a href="#" className="menuDeroulant__link">
+                      Accueil
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="menuDeroulant__link">
+                      Boutique
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="menuDeroulant__link">
+                      News
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </header>
 
@@ -129,46 +131,17 @@ class HeaderNav extends React.Component {
               id="Nav-Link"
               className={classNames({
                 "nav-link": true,
-                active: this.state.clicked === "figurines",
+                active: this.state.clicked === "Boutique",
               })}
               onClick={(event) => {
-                this.handleClick("figurines");
+                this.handleClick("Boutique");
               }}
-              to="/categoriePage/Figurines"
+              to="/categoriePage/Boutique"
             >
-              Figurines
+              Boutique
             </Link>
           </Nav.Item>
-          <Nav.Item id="Nav-Item">
-            <Link
-              id="Nav-Link"
-              className={classNames({
-                "nav-link": true,
-                active: this.state.clicked === "vetements",
-              })}
-              onClick={(event) => {
-                this.handleClick("vetements");
-              }}
-              to="/categoriePage/Vêtements"
-            >
-              Vêtements
-            </Link>
-          </Nav.Item>
-          <Nav.Item id="Nav-Item">
-            <Link
-              id="Nav-Link"
-              className={classNames({
-                "nav-link": true,
-                active: this.state.clicked === "deco",
-              })}
-              onClick={(event) => {
-                this.handleClick("deco");
-              }}
-              to="/categoriePage/Décorations"
-            >
-              Décorations
-            </Link>
-          </Nav.Item>
+
           <Nav.Item id="Nav-Item">
             <Link
               id="Nav-Link"
@@ -189,14 +162,14 @@ class HeaderNav extends React.Component {
               id="Nav-Link"
               className={classNames({
                 "nav-link": true,
-                active: this.state.clicked === "contact",
+                active: this.state.clicked === "faq",
               })}
               onClick={(event) => {
-                this.handleClick("contact");
+                this.handleClick("faq");
               }}
-              to="/Contact"
+              to="/FAQ"
             >
-              Contact
+              FAQ
             </Link>
           </Nav.Item>
           <Nav.Item className="Nav-background"></Nav.Item>
