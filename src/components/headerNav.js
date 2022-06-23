@@ -10,24 +10,49 @@ import React from "react";
 import classNames from "classnames";
 
 class HeaderNav extends React.Component {
+
+  state = {
+    clicked: "",
+    input : ""
+  };
+
   constructor(props) {
     super(props);
-    this.state = {
-      clicked: "",
-    };
+    this.searchPrevent = this.searchPrevent.bind(this)
+    this.searchBar = this.searchBar.bind(this)
+
   }
+
+
 
   handleClick = (name) => {
     this.setState({ clicked: name });
   };
 
+  ////////
+  searchPrevent(event){
+      event.preventDefault();
+      this.props.func(this.state.input);
+      console.log(this.state.input)
+  }
+
+  searchBar(event){
+          
+    this.setState(() =>{
+        return{
+            input: event.target.value
+            
+        }
+    })
+  }
+/////////////
   render() {
     return (
       <div className="section__headerNav">
         <header className="header">
           <div className="header__logo">
             <figure className="logo__picture">
-              <img src={Logo} alt="logo MANFRA" />
+              <img  src={Logo} alt="logo MANFRA" />
             </figure>
           </div>
 
@@ -38,9 +63,9 @@ class HeaderNav extends React.Component {
               <ModalConnexion />
             </div>
             <div className="header__nav__icone">
-              <a href="#">
-                <img className="nav__loupe" src={Loupe} alt="rechercher" />
-              </a>
+              <form  /* Ceci est le form  */ onSubmit={this.searchPrevent} >
+              <input onChange={this.searchBar} type="text" className="form-control me-sm-2" placeholder="Search"/>
+              </form>
               <Link className="header__nav" to="/panier">
                 <img className="nav__panier" src={Panier} alt="mon panier" />
               </Link>
