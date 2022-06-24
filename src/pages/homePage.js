@@ -1,5 +1,5 @@
 import Articles from "../components/articles";
-import Cards from "../components/bandeau_homePage";
+import BandeauHomePageCards from "../components/bandeau_homePage";
 import Slider from "../components/Slider";
 import Reassur from "../components/reassur";
 
@@ -12,14 +12,11 @@ function HomePage() {
     <>
       <Slider />
       <section className="wrapper__cards">
-        <Cards />
-        <Cards />
-        <Cards />
+        <BandeauHomePageCards />
       </section>
 
       <Articles />
-      <Reassur/>
-      
+      <Reassur />
     </>
   );
 }
