@@ -7,6 +7,9 @@ import News from "../src/pages/news";
 import Contact from "../src/pages/contact";
 import HeaderNav from "./components/headerNav";
 import Footer from "./components/footer";
+import "./App.css";
+import Slider from "./components/Slider.js";
+
 
 function App() {
   return (

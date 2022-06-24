@@ -10,7 +10,7 @@ function Slider () {
     const datas = [
         {
             id: 1,
-            image: `./Image/1.jfif`,
+            image: "./Image/1.png",
             title: "Titre du slider 1",
             text: `lorem ipsum dolor sit`
         },
@@ -30,7 +30,7 @@ function Slider () {
     ]
 
     return (
-        <Carousel autoPlay interval={6000} infiniteLoop thumbWidth={120} showIndicators={false} showStatus={false}>
+        <Carousel autoPlay interval={4000} infiniteLoop thumbWidth={120} showIndicators={false} showStatus={false}>
             {datas.map(slide => (
                 <div key={slide.id}>
                     <img src={slide.image} alt=""/>
@@ -44,6 +44,5 @@ function Slider () {
         </Carousel>
     )
 }
-
 
 export default Slider;
