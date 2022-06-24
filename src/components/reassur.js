@@ -27,10 +27,9 @@ function Reassur() {
         </svg>
       </div>
     </div>
-    <h2 className="rea-title">Text en vert</h2>
+    <h2 className="rea-title">Paiement sécurisé</h2>
     <p className="rea-text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-      veritatis quasi modi
+    Par CB, Paypal, Chèque
     </p>
   </div>
   <div className="reassurance">
@@ -52,10 +51,9 @@ function Reassur() {
         </svg>
       </div>
     </div>
-    <h2 className="rea-title">Text en vert</h2>
+    <h2 className="rea-title">Produits contrôlés</h2>
     <p className="rea-text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-      veritatis quasi modi
+    Plus de 7000 produits
     </p>
   </div>
   <div className="reassurance">
@@ -75,10 +73,9 @@ function Reassur() {
         </svg>
       </div>
     </div>
-    <h2 className="rea-title">Text en vert</h2>
+    <h2 className="rea-title">Livraison dès 3,90€</h2>
     <p className="rea-text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-      veritatis quasi modi
+    Offerte dès 49€ d'achat à domicile ou point relais
     </p>
   </div>
   <div className="reassurance">
@@ -101,10 +98,9 @@ function Reassur() {
         </svg>
       </div>
     </div>
-    <h2 className="rea-title">Text en vert</h2>
+    <h2 className="rea-title">Expédition le jour même</h2>
     <p className="rea-text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-      veritatis quasi modi
+    Pour les commandes avant 13h
     </p>
   </div>
   <div className="reassurance">
@@ -127,10 +123,9 @@ function Reassur() {
         </svg>
       </div>
     </div>
-    <h2 className="rea-title">Text en vert</h2>
+    <h2 className="rea-title">Changer d'avis</h2>
     <p className="rea-text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-      veritatis quasi modi
+    15 jours de délai pour tout retour
     </p>
   </div>
 </section>

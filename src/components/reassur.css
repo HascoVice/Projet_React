@@ -9,22 +9,33 @@
 }
 svg {
   max-width: 100%;
+  margin-top: -25px;
 }
 .div-img {
   border: solid pink 2px;
   background-color: #e60965;
-  width: 100px;
-  height: 100%;
+  width: 43px;
+  height: 40px;
   padding: 0px 10px;
   border-radius: 100%;
 }
 
 .wrap-reass {
   display: flex;
+  background-color:white;
 }
 .reassurance {
   text-align: center;
+  padding: 20px 0px 0px 0px;
 }
 .rea-title {
-  color: pink;
+  color: #e60965;
+font-weight: bold;
+font-size: 19px;
+
+}
+.rea-text{
+  width: 300px;
+  font-size: 14px;
+  
 }

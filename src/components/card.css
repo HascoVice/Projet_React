@@ -244,3 +244,6 @@ input[type="number"] {
     transition: background-position 1s steps(28);
     transition-duration: 0s;
 }
+.priceDiscount { color: red; } 
+.PriceRaye{ text-decoration: line-through; } 
+.allPrice{ display: flex; justify-content: center; gap: 5px; }

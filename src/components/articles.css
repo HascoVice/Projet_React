@@ -14,8 +14,7 @@ ul {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 40px;
-  border-bottom: 1px solid black;
+  padding: 40px 40px 0px 40px;
 }
 .bloghaut {
   display: flex;
