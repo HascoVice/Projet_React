@@ -11,16 +11,18 @@ body {
 }
 .bandeau_cards {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 44px;
+  margin: auto;
 }
 .bandeau__title {
   font-family: "oswald";
-  padding: 2rem 5rem 1rem 5rem;
+  padding: 2rem 5rem 1rem 8rem;
   transform: scaleY(1.5);
 }
 .wrapper__cards {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(232 221 123 / 29%);
   margin: 32px;
   padding: 10px 10px;
