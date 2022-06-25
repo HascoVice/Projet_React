@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import "./bandeau_homePage.css";
+import { data } from "autoprefixer";
 
 class HomePageCard extends React.Component {
   state = {
@@ -17,6 +18,7 @@ class HomePageCard extends React.Component {
     this.click_Buy = this.click_Buy.bind(this);
     this.click_heart = this.click_heart.bind(this);
     this.Click_Buy_Stockage = this.Click_Buy_Stockage.bind(this);
+    console.log(props.hey)
   }
 
   click_Buy() {
@@ -94,13 +96,13 @@ class HomePageCard extends React.Component {
               <div className="left">
                 <Link to={"/productPage"}>
                   <div className="details">
-                    <h1>{"this.props.data.title"}</h1>
-                    {/* <div className="allPrice">
-                      <p className={"PriceRaye"}>{"this.props.data.price"}</p>
-                      <p className="priceDiscount">
+                    <h1>{/* this.props.hey.title */}</h1>
+                    {/* <div className={allPrice}>
+                      <p className={PriceRaye}>{this.props.data.price}</p>
+                      <p className={priceDiscount}>
                         {"this.props.data.priceDiscount"}
                       </p>
-                    </div> */}
+                    </div>  */}
                   </div>
                 </Link>
                 <div
@@ -135,6 +137,68 @@ class HomePageCard extends React.Component {
     );
   }
 }
+
+class Cards extends React.Component {
+
+  state={
+    toto: null
+  }
+
+  constructor(){
+    super()
+    this.fetch = this.fetch.bind(this)
+  }
+
+  componentDidMount(){
+    this.fetch()
+
+  }
+
+  fetch(){
+    fetch('https://otakod.es/hetic/ecommerce-api/products?search=dbz')
+        .then((response) => response.json())
+        .then((dataa) => {
+          console.log(dataa)
+            this.setState(() => {
+                return{
+                    toto : dataa.products
+
+                }
+                
+            })
+            console.log(this.state.toto)
+        })
+        
+}
+
+  render(){
+    if(this.state.toto == null){
+      return
+    }
+      return (
+    <>
+      {" "}
+      <h2 className="bandeau__title">Les nouveautés</h2>
+      <div className="bandeau_cards">
+        {
+          this.state.toto.map((data,index) => {
+              if(index >= 4){
+                return
+              }
+            return (
+              <>
+              <HomePageCard hey={data} />
+              </>
+            )
+          })
+        }
+        
+      </div>
+    </>
+  );
+}
+  }
+
 
 function BandeauHomePageCard() {
   return (
