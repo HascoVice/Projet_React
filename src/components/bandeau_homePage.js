@@ -155,7 +155,7 @@ class Cards extends React.Component {
   }
 
   fetch(){
-    fetch('https://otakod.es/hetic/ecommerce-api/products?search=dbz')
+    fetch('https://otakod.es/hetic/ecommerce-api/products?rating_min=5')
         .then((response) => response.json())
         .then((dataa) => {
           console.log(dataa)
@@ -178,7 +178,7 @@ class Cards extends React.Component {
       return (
     <>
       {" "}
-      <h2 className="bandeau__title">Les nouveautés</h2>
+      <h2 className="bandeau__title">Les meilleurs ventes</h2>
       <div className="bandeau_cards">
         {
           this.state.toto.map((data,index) => {

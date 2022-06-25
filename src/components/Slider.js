@@ -30,7 +30,7 @@ function Slider () {
     ]
 
     return (
-        <Carousel autoPlay interval={6000} infiniteLoop thumbWidth={120} showIndicators={false} showStatus={false}>
+        <Carousel autoPlay interval={4000} infiniteLoop thumbWidth={120} showIndicators={false} showStatus={false}>
             {datas.map(slide => (
                 <div key={slide.id}>
                     <img src={slide.image} alt=""/>
