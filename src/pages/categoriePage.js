@@ -3,6 +3,11 @@ import Card from "../components/card";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import Sidebar from "../components/menu-filter";
+import "../pages/categoriePage.css";
+import categorie from "../components/menu-filter";
+
+
 
 class CategoriePage extends React.Component {
   state = {
@@ -61,7 +66,7 @@ class CategoriePage extends React.Component {
 
   fetch() {
     fetch(
-      "https://otakod.es/hetic/ecommerce-api/products?search=" + this.props.bar
+      "https://otakod.es/hetic/ecommerce-api/products?category=&search=" + this.props.bar
     )
       .then((response) => response.json())
       .then((dataa) => {
@@ -73,19 +78,27 @@ class CategoriePage extends React.Component {
           };
         });
       });
+      console.log(categorie)
   }
 
   render() {
-    return (
+    return (<>
+    <div className="Sidecard">
+    <div>
+        <Sidebar/>
+      </div>
       <div className="flex-wrap d-flex justify-content-center p-5">
         {this.state.image.map((anime, index) => {
           return (
             <div key={index} className=" d-flex">
-              <Card func={this.localStorage} data={anime} />
+              <Card data={anime} />
             </div>
           );
         })}
       </div>
+      </div>
+      
+      </>
     );
   }
 }
