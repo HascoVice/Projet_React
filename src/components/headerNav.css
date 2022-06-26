@@ -60,6 +60,10 @@ button {
   justify-content: center;
   gap: 15px;
 }
+.btn-primary:focus {
+  color: black;
+  background: white;
+}
 
 /* s'affiche seulement en min-830 */
 .nav__panier {

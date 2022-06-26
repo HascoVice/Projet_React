@@ -132,7 +132,7 @@ class ProductPage extends React.Component {
               })}
             </ul> */}
             {/* image en gros plan */}
-            <figure>
+            <figure className="visuel__produit">
               <img src="" alt="visuel produit"></img>
             </figure>
             {/* nomenclature du produit */}
