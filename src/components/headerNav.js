@@ -41,7 +41,8 @@ class HeaderNav extends React.Component {
     if (this.state.redirect) {
       console.log('hiiiiiiii')
 
-      return <Redirect to='/categoriePage/Boutique' />
+      return (<><Redirect to='/categoriePage/Boutique' />
+      </>)
 
     }
   }
@@ -68,6 +69,7 @@ class HeaderNav extends React.Component {
     
   }
   /////////////
+  
   render() {
     return (
       <div className="section__headerNav">
