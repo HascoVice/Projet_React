@@ -1,10 +1,10 @@
 import "./App.css";
 import React from "react";
 import HomePage from "../src/pages/homePage";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Link, Redirect } from "react-router-dom";
 import CategoriePage from "../src/pages/categoriePage";
 import ProductPage from "../src/pages/productPage";
-import ShoppingCartPage from "../src/pages/shoppingCartPage";
+import Panier from "../src/pages/panier";
 import News from "../src/pages/news";
 import Contact from "../src/pages/contact";
 import HeaderNav from "./components/headerNav";
@@ -15,8 +15,8 @@ class App extends React.Component {
     search: "",
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.test = this.test.bind(this);
   }
 
@@ -29,7 +29,7 @@ class App extends React.Component {
     });
   }
 
-  render() {
+  render(props) {
     return (
       <>
         <div className="wrapper__homePage">
@@ -48,11 +48,13 @@ class App extends React.Component {
               <Contact />
             </Route>
             <Route path="/Panier">
-              <ShoppingCartPage />
+              <Panier />
             </Route>
-            <Route path="/productPage">
-              <ProductPage />
-            </Route>
+            <Route path="/productPage/:id" component={ProductPage}></Route>
+            <Route
+              path="/categoriePage/productPage/:id"
+              component={ProductPage}
+            ></Route>
           </Switch>
 
           <Footer />

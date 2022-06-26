@@ -13,8 +13,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding: 40px 40px 0px 40px;
+  padding: 40px;
 }
 .bloghaut {
   display: flex;
@@ -25,12 +24,11 @@ ul {
 .bloghaut span {
   color: red;
 }
-.bloghaut h3 {
+.newsh3 {
   font-family: "oswald";
   color: black;
   font-weight: 700;
   font-size: 30px;
-  transform: scaleX(3);
   margin-left: 10%;
 }
 .blogcontenu {

@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <MDBFooter className="text-center" color="black" id="footer">
       <MDBContainer className="p-4">
-        <section className="mb-4">
+        <section className="mb-4 icone__RS">
           <a
             className="btn btn-outline-dark btn-floating m-1 btn-hover"
             href="#!"
@@ -65,25 +65,26 @@ export default function Footer() {
           </a>
         </section>
 
-        <section className="">
-          <form action="">
-            <div className="row d-flex justify-content-center">
-              <div className="col-auto">
-                <p className="pt-2">
+        <section className="mb-4">
+          <form className="footer__newsletter__wrapper" action="">
+            <div className="footer__newsletter">
+              <div className="newsletter__text">
+                <p className="newsletter__text__p">
                   <strong>Inscrivez-vous à la newsletter</strong>
                 </p>
               </div>
 
-              <MDBCol md="5" start="12">
+              <MDBCol md="5" start="12" className="footer__newsletter">
                 <MDBInput
                   contrast
                   type="email"
                   label="Adresse Mail"
-                  className="mb-4"
+                  className="form-dark"
+                  color="dark"
                 />
               </MDBCol>
 
-              <div className="col-auto">
+              <div className="row-auto">
                 <MDBBtn
                   outline
                   color="dark"

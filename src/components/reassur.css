@@ -1,13 +1,8 @@
-* {
-  padding: 0%;
-  margin: 0;
-  box-sizing: border-box;
-}
 .flex-img {
   display: flex;
   justify-content: center;
 }
-svg {
+.svg-rea {
   max-width: 100%;
   margin-top: -25px;
 }
@@ -22,20 +17,23 @@ svg {
 
 .wrap-reass {
   display: flex;
-  background-color:white;
+  justify-content: center;
+  background-color: white;
 }
 .reassurance {
   text-align: center;
-  padding: 20px 0px 0px 0px;
+  padding: 40px 0px 20px 0px;
 }
 .rea-title {
   color: #e60965;
-font-weight: bold;
-font-size: 19px;
-
+  font-weight: bold;
+  font-size: 19px;
 }
-.rea-text{
+.rea-text {
   width: 300px;
   font-size: 14px;
-  
+}
+.rea-text {
+  width: 300px;
+  font-size: 14px;
 }

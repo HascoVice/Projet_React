@@ -1,19 +1,30 @@
 import Logo from "../assets/headerNav_img/Gomu_logo.png";
 import Loupe from "../assets/headerNav_img/svgexport-1.svg";
 import Panier from "../assets/headerNav_img/Voir mon panier.svg";
-import { Form, Nav } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./headerNav.css";
 import ModalConnexion from "../components/modal_connexion";
 import "./modal_connexion.css";
 import React from "react";
 import classNames from "classnames";
+import { Redirect } from 'react-router-dom';
+
 
 class HeaderNav extends React.Component {
   state = {
     clicked: "",
     input: "",
+    redirect: false
+
   };
+
+  componentDidMount(){
+    this.setState({
+      redirect: false
+    })
+    this.renderRedirect()
+  }
 
   constructor(props) {
     super(props);
@@ -25,11 +36,26 @@ class HeaderNav extends React.Component {
     this.setState({ clicked: name });
   };
 
+  renderRedirect = () => {
+    console.log('hi')
+    if (this.state.redirect) {
+      console.log('hiiiiiiii')
+
+      return <Redirect to='/categoriePage/Boutique' />
+
+    }
+  }
+
   ////////
   searchPrevent(event) {
     event.preventDefault();
     this.props.func(this.state.input);
+    this.setState({
+      redirect: true
+    })
+    this.renderRedirect()
     console.log(this.state.input);
+
   }
 
   searchBar(event) {
@@ -37,7 +63,9 @@ class HeaderNav extends React.Component {
       return {
         input: event.target.value,
       };
+      
     });
+    
   }
   /////////////
   render() {
@@ -57,22 +85,25 @@ class HeaderNav extends React.Component {
               <div className="header__nav__loggin">
                 <ModalConnexion />
 
-                <Link className="btn-primary btn-panier" to={"/Panier"}>
-                  Mon panier
+                <Link to={"/Panier"}>
+                  <button className="btn-primary btn-panier">Mon panier</button>
                 </Link>
                 <Link className="header__nav" to="/panier">
                   <img className="nav__panier" src={Panier} alt="mon panier" />
                 </Link>
               </div>
               <div className="header__nav__icone">
+              {this.renderRedirect()}
                 <form onSubmit={this.searchPrevent}>
                   <input
                     onChange={this.searchBar}
                     type="text"
-                    className="form-control me-sm-2"
+                    className="form-control me-sm-2 nav__input"
                     placeholder="Search"
                   />
-                  <button type="submit">
+                
+
+                  <button type="submit" className="btn__submitSearch">
                     <img
                       className="nav__loupe"
                       src={Loupe}

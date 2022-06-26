@@ -1,15 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ReactDOM from "react-dom/client";
 import "./bandeau_homePage.css";
+import { data } from "autoprefixer";
+import Sidebar from "../components/menu-filter";
+import categorie from "../components/menu-filter";
+import Card from "../components/card";
 
-class HomePageCard extends React.Component {
+class Cardrate extends React.Component {
   state = {
-    hasClicked: false,
-    hasClickedBuy: false,
-    hasClickedBuyNum: 0,
-    image: null,
-    tableau: [],
+    search: "",
+    image: [],
+    compenent: true,
+    image1: [],
+    image2: [],
   };
 
   constructor(props) {
@@ -34,6 +37,7 @@ class HomePageCard extends React.Component {
       };
     });
   }
+
   Click_Buy_Stockage() {
     let tab = [];
     console.log(tab);
@@ -59,108 +63,104 @@ class HomePageCard extends React.Component {
     }
   }
 
+  searchBar() {
+    this.setState(() => {
+      return {
+        search: this.props.bar,
+      };
+    });
+  }
+
+  componentDidMount() {
+    this.fetch();
+    this.fetch_deux();
+    this.fetch_trois();
+  }
+  fetch() {
+    fetch(
+      "https://otakod.es/hetic/ecommerce-api/products?limit=4&rating_min=5&stock_min=6&discount=0"
+    )
+      .then((response) => response.json())
+      .then((dataa) => {
+        this.setState(() => {
+          return {
+            image: dataa.products,
+            /*             search: this.props.bar,
+            compenent: false, */
+          };
+        });
+      });
+    console.log(categorie);
+  }
+  fetch_deux() {
+    fetch(
+      "https://otakod.es/hetic/ecommerce-api/products?limit=4&stock_min=1&stock_max=5"
+    )
+      .then((response) => response.json())
+      .then((dataa) => {
+        this.setState(() => {
+          return {
+            image1: dataa.products,
+            /*             search: this.props.bar,
+            compenent: false, */
+          };
+        });
+      });
+    console.log(categorie);
+  }
+  fetch_trois() {
+    fetch(
+      "https://otakod.es/hetic/ecommerce-api/products?limit=4&discount=1&stock_min=6"
+    )
+      .then((response) => response.json())
+      .then((dataa) => {
+        this.setState(() => {
+          return {
+            image2: dataa.products,
+            /*             search: this.props.bar,
+            compenent: false, */
+          };
+        });
+      });
+    console.log(categorie);
+  }
+
   render() {
-    let heart = "heart is-active";
-    let buy = "bottoom clicked";
-    // let PriceRaye;
-    if (this.state.hasClicked === false) {
-      heart = "heart";
-    }
-
-    if (this.state.hasClickedBuyNum % 2 === 0) {
-      buy = "bottoom";
-    } else if (this.state.hasClickedBuyNum % 2 === 1) {
-      buy = "bottoom clicked";
-    }
-    // if (this.props.data.price > this.props.data.priceDiscount) {
-    //   PriceRaye = "PriceRaye";
-    // }
-
     return (
       <>
-        <div className="wrapper__card">
-          <div className="container_new">
-            <div className="top_new">
-              {" "}
-              <Link to={"/productPage"}>
-                <img
-                  className="img"
-                  src={"this.props.data.images.thumbs[0]"}
-                  alt=""
-                />{" "}
-              </Link>
-            </div>
-            <div className={buy}>
-              <div className="left">
-                <Link to={"/productPage"}>
-                  <div className="details">
-                    <h1>{"this.props.data.title"}</h1>
-                    {/* <div className="allPrice">
-                      <p className={"PriceRaye"}>{"this.props.data.price"}</p>
-                      <p className="priceDiscount">
-                        {"this.props.data.priceDiscount"}
-                      </p>
-                    </div> */}
-                  </div>
-                </Link>
-                <div
-                  onClick={() => {
-                    this.click_Buy();
-                    this.Click_Buy_Stockage();
-                  }}
-                  className="buy"
-                >
-                  <i className="material-icons">add_shopping_cart</i>
-                </div>
+        <h2 className="h2">Les Mieux Notés</h2>
+        <div className="flex-wrap d-flex justify-content-center p-3 ">
+          {this.state.image.map((anime, index) => {
+            return (
+              <div key={index} className=" d-flex">
+                <Card data={anime} />
               </div>
-              <div className="right">
-                <div className="done">
-                  <i className="material-icons">done</i>
-                </div>
-                <div className="details">
-                  <h1>Chair</h1>
-                  <p>Added to your cart</p>
-                </div>
-                <div onClick={this.click_Buy} className="remove">
-                  <i className="material-icons">clear</i>
-                </div>
+            );
+          })}
+        </div>
+        <h2 className="h2">Les dernieres chances</h2>
+        <div className="flex-wrap d-flex justify-content-center p-3 ">
+          {this.state.image1.map((anime, index) => {
+            return (
+              <div key={index} className=" d-flex">
+                <Card data={anime} />
               </div>
-            </div>
-          </div>
-          <div onClick={this.click_heart} className="placement">
-            <div className={heart}></div>
-          </div>
+            );
+          })}
+        </div>
+        <h2 className="h2">Les bons plans</h2>
+        <div className="flex-wrap d-flex justify-content-center p-3 ">
+          {this.state.image2.map((anime, index) => {
+            return (
+              <div key={index} className=" d-flex">
+                <Card data={anime} />
+              </div>
+            );
+          })}
         </div>
       </>
     );
   }
 }
 
-function BandeauHomePageCard() {
-  return (
-    <div className="bandeau_cards">
-      <HomePageCard />
-      <HomePageCard />
-      <HomePageCard />
-      <HomePageCard />
-    </div>
-  );
-}
-
-function BandeauHomePageCards() {
-  return (
-    <>
-      {" "}
-      <div className="bandeau_cards">
-        <h2 className="bandeau__title">Les nouveautés</h2>
-        <BandeauHomePageCard />
-        <h2 className="bandeau__title">Les meilleurs ventes</h2>
-        <BandeauHomePageCard />
-        <h2 className="bandeau__title">Les mieux notés</h2>
-        <BandeauHomePageCard />
-      </div>
-    </>
-  );
-}
-
-export default BandeauHomePageCards;
+export default Cardrate;
