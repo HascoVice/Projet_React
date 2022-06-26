@@ -1,18 +1,18 @@
-* {
+*{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   background: #e3e3d8;
   font-family: sans-serif;
+
 }
 
 .wrapper__card {
-  width: 260px;
-  height: 400px;
+  width: 300px;
+  height: 500px;
   background: white;
   margin: auto;
   position: relative;
@@ -33,8 +33,7 @@ body {
 .wrapper__card .container_new .top_new {
   height: 80%;
   width: 100%;
-  background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
-    no-repeat center center;
+  background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg) no-repeat center center;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   -o-background-size: 100%;
@@ -71,16 +70,16 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 10px;
-  /*     width: calc(70% - 40px); */
+/*     width: calc(70% - 40px); */
 }
 .wrapper__card .container_new .bottoom .left .buy {
-    float: right;
-    width: calc(30% - 2px);
-    height: 100%;
-    background: #f1f1f1;
-    transition: background 0.5s;
-    border-left: solid thin rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+  float: right;
+  width: calc(30% - 2px);
+  height: 100%;
+  background: #f1f1f1;
+  transition: background 0.5s;
+  border-left: solid thin rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 .wrapper__card .container_new .bottoom .left .buy i {
   font-size: 30px;
@@ -106,16 +105,15 @@ body {
 .wrapper__card .container_new .bottoom .right .details {
   padding: 20px;
   float: right;
-  /*     width: calc(70% - 40px);
- */
-}
+/*     width: calc(70% - 40px);
+*/}
 .wrapper__card .container_new .bottoom .right .done {
-    width: calc(30% - 2px);
-    float: left;
-    transition: transform 0.5s;
-    border-right: solid thin rgba(255, 255, 255, 0.3);
-    height: 50%;
-    cursor: pointer;
+  width: calc(30% - 2px);
+  float: left;
+  transition: transform 0.5s;
+  border-right: solid thin rgba(255, 255, 255, 0.3);
+  height: 50%;
+  cursor: pointer;
 }
 .wrapper__card .container_new .bottoom .right .done i {
   font-size: 30px;
@@ -123,13 +121,13 @@ body {
   color: white;
 }
 .wrapper__card .container_new .bottoom .right .remove {
-    width: calc(30% - 1px);
-    clear: both;
-    border-right: solid thin rgba(255, 255, 255, 0.3);
-    height: 50%;
-    background: #bc3b59;
-    transition: transform 0.5s, background 0.5s;
-    cursor: pointer;
+  width: calc(30% - 1px);
+  clear: both;
+  border-right: solid thin rgba(255, 255, 255, 0.3);
+  height: 50%;
+  background: #bc3b59;
+  transition: transform 0.5s, background 0.5s;
+  cursor: pointer;
 }
 .wrapper__card .container_new .bottoom .right .remove:hover {
   background: #9b2847;
@@ -143,8 +141,7 @@ body {
   padding: 30px;
   color: white;
 }
-.wrapper__card .container_new .bottoom .right:hover .remove,
-.wrapper__card .container_new .bottoom .right:hover .done {
+.wrapper__card .container_new .bottoom .right:hover .remove, .wrapper__card .container_new .bottoom .right:hover .done {
   transform: translateY(-100%);
 }
 .wrapper__card .inside {
@@ -194,23 +191,22 @@ body {
   text-align: left;
   width: 100%;
 }
-.wrapper__card .inside .contents h1,
-.wrapper__card .inside .contents p,
-.wrapper__card .inside .contents table {
+.wrapper__card .inside .contents h1, .wrapper__card .inside .contents p, .wrapper__card .inside .contents table {
   color: white;
 }
 .wrapper__card .inside .contents p {
   font-size: 13px;
 }
 
+
 /* .heart {
-    width: 100px;
-    height: 100px;
-    background: url("./asset/Group\ 1.png") no-repeat;
-    background-position: 0 0;
-    cursor: pointer;
-    transition: background-position 1s steps(28);
-    transition-duration: 0s;
+  width: 100px;
+  height: 100px;
+  background: url("./asset/Group\ 1.png") no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  transition: background-position 1s steps(28);
+  transition-duration: 0s;
 } */
 .heart.is-active {
   transition-duration: 1s;
@@ -223,13 +219,13 @@ body {
   right: -5%;
 }
 
-.top_new .img {
+.top_new .img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.details h1 {
+.details h1{
   font-size: 18px;
 }
 
@@ -238,7 +234,7 @@ input[type="number"] {
   text-align: center;
 }
 
-.details * {
+.details *{
   text-align: center;
 }
 
@@ -251,3 +247,6 @@ input[type="number"] {
   transition: background-position 1s steps(28);
   transition-duration: 0s;
 }
+.priceDiscount { color: red; } 
+.PriceRaye{ text-decoration: line-through; } 
+.allPrice{ display: flex; justify-content: center; gap: 5px; }
