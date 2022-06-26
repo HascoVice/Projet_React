@@ -72,7 +72,7 @@ class HeaderNav extends React.Component {
                     className="form-control me-sm-2 nav__input"
                     placeholder="Search"
                   />
-                  <button type="submit" className="btn__submitSearch">
+                  <button type="submit" className="btn__submitSearch" >
                     <img
                       className="nav__loupe"
                       src={Loupe}

@@ -129,7 +129,7 @@ class Cardrate extends React.Component {
   render() {
     return (
       <>
-        <h2>les Mieux Notés</h2>
+        <h2 className="h2">Les Mieux Notés</h2>
         <div className="flex-wrap d-flex justify-content-center p-3 ">
           {this.state.image.map((anime, index) => {
             return (
@@ -139,7 +139,7 @@ class Cardrate extends React.Component {
             );
           })}
         </div>
-        <h2>les dernieres chances</h2>
+        <h2 className="h2">Les dernieres chances</h2>
         <div className="flex-wrap d-flex justify-content-center p-3 ">
           {this.state.image1.map((anime, index) => {
             return (
@@ -149,7 +149,7 @@ class Cardrate extends React.Component {
             );
           })}
         </div>
-        <h2>Les bons plans</h2>
+        <h2 className="h2">Les bons plans</h2>
         <div className="flex-wrap d-flex justify-content-center p-3 ">
           {this.state.image2.map((anime, index) => {
             return (

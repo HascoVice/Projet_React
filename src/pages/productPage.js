@@ -1,6 +1,5 @@
 import React from "react";
 import Reassur from "../components/reassur";
-
 import "../pages/productPage.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";

@@ -10,6 +10,7 @@ import Contact from "../src/pages/contact";
 import HeaderNav from "./components/headerNav";
 import Footer from "./components/footer";
 
+
 class App extends React.Component {
   state = {
     search: "",

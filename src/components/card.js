@@ -96,8 +96,12 @@ export default class Card extends React.Component {
       Stock = "tag-stock";
       console.log("stock", Stock);
     }
-
-    let iff = this.props.data.images.thumbs[0] !== null;
+    let img = this.props.data.images.thumbs[0]
+    console.log(img)
+    console.log('RAYAAAAANE')
+     if(this.props.data.images.thumbs[0] == undefined){
+        img = this.props.data.images.photos[0]
+     }
 
     return (
       <div className="wrapper__card">
@@ -111,7 +115,7 @@ export default class Card extends React.Component {
             >
               <img
                 className="img"
-                src={this.props.data.images.thumbs[0]}
+                src={img}
                 alt=""
               />
             </Link>
