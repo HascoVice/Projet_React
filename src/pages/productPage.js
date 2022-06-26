@@ -1,6 +1,8 @@
 import React from "react";
 import Reassur from "../components/reassur";
+import { Link } from "react-router-dom";
 import "../pages/productPage.css";
+import { heart } from "../assets/Group 1.png";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
@@ -10,15 +12,16 @@ class ProductPage extends React.Component {
     hasClicked: false,
     hasClickedBuy: false,
     hasClickedBuyNum: 0,
-    images: null,
+    images: [],
     tableau: [],
     compenent: false,
     item: [],
+    images__props: null,
   };
 
   constructor(props) {
     super(props);
-
+    this.click_heart = this.click_heart.bind(this);
     this.click_Buy = this.click_Buy.bind(this);
     this.Click_Buy_Stockage = this.Click_Buy_Stockage.bind(this);
 
@@ -59,10 +62,19 @@ class ProductPage extends React.Component {
             compenent: false,
             item: data,
             images: data.images.photos,
+            images__props: data.images.photos[0],
           };
         });
       });
   }
+  handleClick = (event) => {
+    this.setState(() => {
+      return {
+        images__props: event.target.src,
+      };
+    });
+    console.log(event.target.src);
+  };
 
   click_Buy() {
     this.setState((state) => {
@@ -71,7 +83,13 @@ class ProductPage extends React.Component {
       };
     });
   }
-
+  click_heart() {
+    this.setState(() => {
+      return {
+        hasClicked: true,
+      };
+    });
+  }
   Click_Buy_Stockage() {
     let tab = [];
     console.log(tab);
@@ -98,12 +116,16 @@ class ProductPage extends React.Component {
   }
 
   render() {
+    let heart = "heart is-active";
     let buy = "bottoom clicked";
-    // let images = this.props.data.images.photos;
+    let images = this.state.images;
 
-    // var listImages = images.map((image) => <li>{image}</li>);
-    // console.log("images", images);
-    // console.log("images", listImages);
+    //var listImages = images.map((image) => <li>{image}</li>);
+    console.log("images", images);
+    //console.log("images", listImages);
+    if (this.state.hasClicked === false) {
+      heart = "heart";
+    }
     if (this.state.hasClickedBuyNum % 2 === 0) {
       buy = "bottoom";
     } else if (this.state.hasClickedBuyNum % 2 === 1) {
@@ -125,26 +147,47 @@ class ProductPage extends React.Component {
           <div className="productPage__wrapper">
             <div class={Promo}></div>
             {/* image différentes à intégrer en fetch  */}
-            {/* <ul>
-              {images.forEach((image) => {
-                return <li key={image.id}>{image.id}</li>;
-              })}
-            </ul> */}
+            <ul className="visuel_list">
+              <li className="visuel__produit__petitformat">
+                {images.map((image) => {
+                  return (
+                    <img
+                      className="images"
+                      key={image}
+                      src={image}
+                      alt="visuel_produit_miniature"
+                      onClick={this.handleClick}
+                    />
+                  );
+                })}
+              </li>
+            </ul>
             {/* image en gros plan */}
-            <figure className="visuel__produit">
-              <img src="" alt="visuel produit"></img>
+            <figure>
+              <img
+                className="visuel__produit__grandformat"
+                src={this.state.images__props}
+                alt="visuel_produit_miniature"
+              />
             </figure>
             {/* nomenclature du produit */}
             <div className="productPage__description">
               <h1 className="productPage__description__title">
                 {this.state.item.title}
               </h1>
-              <div className="productPage__description__avis">
-                {this.state.item.rating}
-              </div>
               <p className="productPage__description__description">
                 {this.state.item.description}
               </p>
+              <div onClick={this.click_heart} className="placement">
+                <div className={heart}></div>
+              </div>
+              <p roductPage__description__votant>
+                {this.state.item.raters} Avis
+              </p>
+              <p className="productPage__description__avis">
+                Note globale :{this.state.item.rating}
+              </p>
+
               <div
                 onClick={() => {
                   this.Click_Buy_Stockage();
@@ -156,6 +199,19 @@ class ProductPage extends React.Component {
                 <p>Ajouter au panier &nbsp; -</p>
                 <p className={PriceRaye}>{this.state.item.price}</p>
                 <p className="priceDiscount">{this.state.item.priceDiscount}</p>
+              </div>
+
+              <div className="wrapper__CTA">
+                <Link to={"./categoriePage/Boutique"}>
+                  <div className="voir_mon_panier">
+                    <p>Continuer mes achats</p>
+                  </div>
+                </Link>
+                <Link>
+                  <div className="voir_mon_panier">
+                    <p>Voir mon panier</p>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import Card_Panier from "../components/card_panier";
+import "./panier.css";
 
 export default class Panier extends React.Component {
   state = {
@@ -88,6 +89,9 @@ export default class Panier extends React.Component {
 
   Total_Price() {
     let total = 0;
+    if (JSON.parse(localStorage.getItem("Product : ")) == null) {
+      return;
+    }
     JSON.parse(localStorage.getItem("Product : ")).map((count, index) => {
       let Replace = count.price.replace("€", "");
       let Nuumber = Number(Replace);
