@@ -1,0 +1,9 @@
+.faq_enCours {
+  font-size: 40px;
+}
+.faq_description {
+  display: flex;
+  justify-content: center;
+  margin-top: 300px;
+  height: 100vh;
+}

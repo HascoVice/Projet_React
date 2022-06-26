@@ -7,3 +7,6 @@
   border: 1px solid rgba(0, 0, 0, 0.125);
   box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
 }
+.wrapper {
+  background: url("../assets/background_comics_pc.jpg");
+}

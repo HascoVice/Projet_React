@@ -1,6 +1,7 @@
 import React from "react";
 import Card_Panier from "../components/card_panier";
 import "./panier.css";
+import Reassur from "../components/reassur";
 
 export default class Panier extends React.Component {
   state = {
@@ -144,94 +145,98 @@ export default class Panier extends React.Component {
 
   render() {
     return (
-      <section
-        className="h-100 h-custom bg-white"
-        style={{ backgroundColor: "#d2c9ff" }}
-      >
-        <div className="container py-5 h-100">
-          <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-12">
-              <div
-                className="card card-registration card-registration-2"
-                style={{ borderRadius: 15 }}
-              >
-                <div className="card-body p-0">
-                  <div className="row g-0">
-                    <div className="col-lg-8">
-                      <div className="p-5">
-                        <div className="d-flex justify-content-between align-items-center mb-5">
-                          <h1 className="fw-bold mb-0 text-black">
-                            Shopping Cart
-                          </h1>
-                          <h6 className="mb-0 text-muted">
-                            {this.Count()} items
-                          </h6>
-                        </div>
-                        <div>
-                          {this.state.local.map((data, index) => {
-                            return (
-                              <div key={index}>
-                                <Card_Panier
-                                  Delete={this.Delete}
-                                  Count_init={this.Count_init}
-                                  CalcMoins={this.CalcMoins}
-                                  Calc={this.Calc}
-                                  iindex={data.count}
-                                  list={data}
-                                />
-                              </div>
-                            );
-                          })}
-                        </div>
-                        <div className="pt-5">
-                          <h6 className="mb-0">
-                            <a href="#!" className="text-body">
-                              <i className="fas fa-long-arrow-alt-left me-2" />
-                              Back to shop
-                            </a>
-                          </h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-lg-4 bg-grey">
-                      <div className="p-5">
-                        <h3 className="fw-bold mb-5 mt-2 pt-1">Summary</h3>
-                        <hr className="my-4" />
-                        <div className="d-flex justify-content-between mb-4">
-                          <h5 className="text-uppercase">
-                            items {this.state.local.length}
-                          </h5>
-                        </div>
-
-                        <h5 className="text-uppercase mb-3">Give code</h5>
-                        <div className="mb-5">
-                          <div className="form-outline">
-                            <input
-                              type="text"
-                              id="form3Examplea2"
-                              className="form-control form-control-lg"
-                              onChange={this.Promo}
-                            />
-                            <label
-                              className="form-label"
-                              htmlFor="form3Examplea2"
-                            >
-                              Enter your code
-                            </label>
+      <>
+        <section
+          className="h-100 h-custom bg-white wrapper"
+          style={{ backgroundColor: "#d2c9ff" }}
+        >
+          <div className="container py-5 h-100">
+            <div className="row d-flex justify-content-center align-items-center h-100">
+              <div className="col-12">
+                <div
+                  className="card card-registration card-registration-2"
+                  style={{ borderRadius: 15 }}
+                >
+                  <div className="card-body p-0">
+                    <div className="row g-0">
+                      <div className="col-lg-8">
+                        <div className="p-5">
+                          <div className="d-flex justify-content-between align-items-center mb-5">
+                            <h1 className="fw-bold mb-0 text-black">
+                              Mon panier
+                            </h1>
+                            <h6 className="mb-0 text-muted">
+                              {this.Count()} articles
+                            </h6>
+                          </div>
+                          <div>
+                            {this.state.local.map((data, index) => {
+                              return (
+                                <div key={index}>
+                                  <Card_Panier
+                                    Delete={this.Delete}
+                                    Count_init={this.Count_init}
+                                    CalcMoins={this.CalcMoins}
+                                    Calc={this.Calc}
+                                    iindex={data.count}
+                                    list={data}
+                                  />
+                                </div>
+                              );
+                            })}
+                          </div>
+                          <div className="pt-5">
+                            <h6 className="mb-0">
+                              <a href="#!" className="text-body">
+                                <i className="fas fa-long-arrow-alt-left me-2" />
+                                continuer mes achats
+                              </a>
+                            </h6>
                           </div>
                         </div>
-                        <hr className="my-4" />
-                        <div className="d-flex justify-content-between mb-5">
-                          <h5 className="text-uppercase">Total price</h5>
-                          <h5>{this.Total_Price()} €</h5>
+                      </div>
+                      <div className="col-lg-4 bg-grey">
+                        <div className="p-5">
+                          <h3 className="fw-bold mb-5 mt-2 pt-1">
+                            Ma commande
+                          </h3>
+                          <hr className="my-4" />
+                          <div className="d-flex justify-content-between mb-4">
+                            <h5 className="text-uppercase">
+                              {this.state.local.length} Articles
+                            </h5>
+                          </div>
+
+                          <h5 className="text-uppercase mb-3">Code promo</h5>
+                          <div className="mb-5">
+                            <div className="form-outline">
+                              <input
+                                type="text"
+                                id="form3Examplea2"
+                                className="form-control form-control-lg"
+                                onChange={this.Promo}
+                              />
+                              <label
+                                className="form-label"
+                                htmlFor="form3Examplea2"
+                              >
+                                Entrer votre code
+                              </label>
+                            </div>
+                          </div>
+                          <hr className="my-4" />
+                          <div className="d-flex justify-content-between mb-5">
+                            <h5 className="text-uppercase">Prix total</h5>
+                            <h5>{this.Total_Price()} €</h5>
+                          </div>
+                          <button
+                            type="button"
+                            className="btn btn-dark btn-block btn-lg"
+                            data-mdb-ripple-color="dark"
+                          >
+                            Valider
+                          </button>
                         </div>
-                        <button
-                          type="button"
-                          className="btn btn-dark btn-block btn-lg"
-                          data-mdb-ripple-color="dark"
-                        >
-                          Register
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -239,8 +244,9 @@ export default class Panier extends React.Component {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+        <Reassur />
+      </>
     );
   }
 }
