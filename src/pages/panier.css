@@ -1,0 +1,9 @@
+.col-lg-4.bg-grey {
+  background: #eae8e8;
+  border-radius: 0 15px 15px 0px;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+}

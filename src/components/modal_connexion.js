@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Form } from "react-bootstrap";
-import "./modal_connexion.css";
+import "./modal_connexion.css"
+
 
 function ModalConnexion() {
   const [show, setShow] = useState(false);

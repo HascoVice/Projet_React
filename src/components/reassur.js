@@ -12,7 +12,7 @@ function Reassur() {
               width={16}
               height={16}
               fill="currentColor"
-              className="bi bi-credit-card"
+              className="bi bi-credit-card svg-rea"
               viewBox="0 0 16 16"
             >
               <rect width="100%" height="100%" fill="#E30964" />
@@ -35,6 +35,7 @@ function Reassur() {
           <div className="div-img">
             <svg
               style={{ height: 87, width: 40, color: "#0000ff" }}
+              className="svg-rea"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -57,6 +58,7 @@ function Reassur() {
           <div className="div-img">
             <svg
               style={{ height: 87, width: 40, color: "rgb(0, 0, 0)" }}
+              className="svg-rea"
               xmlns="http://www.w3.org/2000/svg"
               data-name="Layer 1"
               viewBox="0 0 24 24"
@@ -83,7 +85,7 @@ function Reassur() {
               width={16}
               height={16}
               fill="currentColor"
-              className="bi bi-stopwatch-fill"
+              className="bi bi-stopwatch-fill svg-rea"
               viewBox="0 0 16 16"
             >
               <rect width="100%" height="100%" fill="#E60965" />
@@ -106,7 +108,7 @@ function Reassur() {
               width={16}
               height={16}
               fill="currentColor"
-              className="bi bi-reply"
+              className="bi bi-reply svg-rea"
               viewBox="0 0 16 16"
             >
               <rect width="100%" height="100%" fill="#E30964" />

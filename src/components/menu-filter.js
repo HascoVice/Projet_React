@@ -1,7 +1,7 @@
 import { logDOM } from "@testing-library/react";
 import React from "react";
 import "../components/menu-filter.css";
-import FlavorForm from "../components/optionSelectCat"
+import classNames from "classnames";
 let categorie;
 class Sidebar extends React.Component{
 
