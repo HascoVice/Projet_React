@@ -11,6 +11,7 @@ class CategoriePage extends React.Component {
     search: "",
     image: [],
     compenent: true,
+    staate : "false"
   };
 
   constructor(props) {
@@ -19,7 +20,6 @@ class CategoriePage extends React.Component {
     this.searchBar = this.searchBar.bind(this);
     this.Fetch_input = this.Fetch_input.bind(this);
     this.Fetch_param = this.Fetch_param.bind(this);
-
   }
 
   searchBar() {
@@ -30,7 +30,13 @@ class CategoriePage extends React.Component {
     });
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+
+    if(this.props.bar != null){
+      this.fetch();
+
+    }
+  }
 
   componentDidUpdate() {
     /*     console.log(this.props);
