@@ -83,6 +83,8 @@ export default class Card extends React.Component {
       PriceRaye = "PriceRaye";
     }
 
+    let iff = this.props.data.images.thumbs[0] !== null;
+
     return (
       <div className="wrapper__card">
         <div className="container_new">
@@ -90,7 +92,7 @@ export default class Card extends React.Component {
             <Link
               to={`productPage/${this.state.new.id}`}
               id={this.state.new.id}
-            >
+            > 
               <img
                 className="img"
                 src={this.props.data.images.thumbs[0]}
