@@ -107,15 +107,24 @@ class ProductPage extends React.Component {
     } else if (this.state.hasClickedBuyNum % 2 === 1) {
       buy = "bottoom clicked";
     }
-
+    let PriceRaye;
+    let Promo = "tag-saleDisable";
+    if (
+      parseFloat(this.state.item.price) >
+      parseFloat(this.state.item.priceDiscount)
+    ) {
+      PriceRaye = "PriceRaye";
+      Promo = "tag-sale";
+    }
     return (
       <>
         <section className="productPage">
           <div className="productPage__wrapper">
+            <div class={Promo}></div>
             {/* image différentes à intégrer en fetch  */}
             <figure>
               <img
-                //src={this.state.data.images.thumbs[0]}
+                //src={this.state.item.images.photo[0]}
                 alt="visuel produit"
               ></img>
               <img
@@ -149,10 +158,10 @@ class ProductPage extends React.Component {
                 }}
                 className="buy"
               >
-                <i className="material-icons">add_shopping_cart</i>
-                <p>Ajouter au panier -</p>
-                <p>{this.state.item.price}</p>
-                <p>{this.state.item.priceDiscount}</p>
+                <i className="material-icons chariot">add_shopping_cart</i>
+                <p>Ajouter au panier &nbsp; -</p>
+                <p className={PriceRaye}>{this.state.item.price}</p>
+                <p className="priceDiscount">{this.state.item.priceDiscount}</p>
               </div>
             </div>
           </div>

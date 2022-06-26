@@ -66,7 +66,8 @@ export default class Card extends React.Component {
     let heart = "heart is-active";
     let buy = "bottoom clicked";
     let PriceRaye;
-
+    let Promo = "tag-saleDisable";
+    let Stock = "tag-stockDisable";
     if (this.state.hasClicked === false) {
       heart = "heart";
     }
@@ -81,12 +82,19 @@ export default class Card extends React.Component {
       parseFloat(this.props.data.priceDiscount)
     ) {
       PriceRaye = "PriceRaye";
+      Promo = "tag-sale__card";
+    }
+    if (this.props.data.stock < 5) {
+      Stock = "tag-stock";
+      console.log("stock", Stock);
     }
 
     let iff = this.props.data.images.thumbs[0] !== null;
 
     return (
       <div className="wrapper__card">
+        <div class={Promo}></div>
+        <div class={Stock}></div>
         <div className="container_new">
           <div className="top_new">
             <Link
@@ -111,7 +119,7 @@ export default class Card extends React.Component {
 
                   <div className="allPrice">
                     <p className={PriceRaye}>{this.props.data.price}</p>
-                    <p className="priceDiscount">
+                    <p className="priceDiscount__card">
                       {this.props.data.priceDiscount}
                     </p>
                   </div>
@@ -132,8 +140,7 @@ export default class Card extends React.Component {
                 <i className="material-icons">done</i>
               </div>
               <div className="details">
-                <h1>Chair</h1>
-                <p>Added to your cart</p>
+                <p className="Add_to_cart">Ajouter au panier</p>
               </div>
               <div onClick={this.click_Buy} className="remove">
                 <i className="material-icons">clear</i>

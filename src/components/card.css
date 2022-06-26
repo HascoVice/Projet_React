@@ -1,13 +1,7 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 html,
 body {
   background: #e3e3d8;
-  font-family: sans-serif;
+  font-family: "oswald";
 }
 
 .wrapper__card {
@@ -52,7 +46,7 @@ body {
   margin: 0;
   padding: 0;
 }
-.wrapper__card .container_new .bottoom p {
+.wrapper__card .container_new .bottoom {
   margin: 0;
   padding: 0;
 }
@@ -87,6 +81,7 @@ body {
   padding: 30px;
   color: #254053;
   transition: transform 0.5s;
+  margin: -10px 0 0 -20px;
 }
 .wrapper__card .container_new .bottoom .left .buy:hover {
   background: #a6cdde;
@@ -220,7 +215,6 @@ body {
 .placement {
   position: fixed;
   top: -3%;
-  right: -5%;
 }
 
 .top_new .img {
@@ -241,7 +235,12 @@ input[type="number"] {
 .details * {
   text-align: center;
 }
+.Add_to_cart {
+  margin-top: 10px;
+  padding-right: 30px;
 
+  font-size: large;
+}
 .heart {
   width: 100px;
   height: 100px;
@@ -251,7 +250,7 @@ input[type="number"] {
   transition: background-position 1s steps(28);
   transition-duration: 0s;
 }
-.priceDiscount {
+.priceDiscount__card {
   color: red;
 }
 .PriceRaye {
@@ -261,4 +260,54 @@ input[type="number"] {
   display: flex;
   justify-content: center;
   gap: 5px;
+}
+.tag-sale__card {
+  background-color: #e20c64;
+  width: 103px;
+  height: 161px;
+  position: absolute;
+  color: #fff;
+  right: -39px;
+  z-index: 9;
+  top: -56px;
+  transform: rotate(137deg);
+}
+
+.tag-sale__card::before {
+  content: "PROMO";
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  transform-origin: top center;
+  transform: rotate(222.5deg) translateX(-56px) translateY(-70px);
+}
+.tag-stock {
+  background-color: #e20c64;
+  width: 103px;
+  height: 161px;
+  position: absolute;
+  color: #fff;
+  right: -39px;
+  z-index: 9;
+  top: -56px;
+  transform: rotate(137deg);
+}
+
+.tag-stock::after {
+  white-space: normal;
+  content: "Dernière";
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  transform-origin: top center;
+  transform: rotate(222.5deg) translateX(-44px) translateY(-60px);
+}
+.tag-stock::before {
+  white-space: normal;
+  content: "pièce";
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  transform-origin: top center;
+  transform: rotate(222.5deg) translateX(-40px) translateY(-60px);
 }

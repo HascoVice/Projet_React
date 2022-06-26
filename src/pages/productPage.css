@@ -4,17 +4,24 @@
 .productPage {
   display: flex;
   padding: 50px;
+  font-family: "oswald";
 }
 .productPage__wrapper {
   display: flex;
   padding: 30px;
   background-color: white;
+  position: relative;
+  overflow: hidden;
 }
+
 figure {
   display: flex;
   flex-direction: column;
   gap: 30px;
   width: 30%;
+}
+.chariot {
+  margin-top: 4px;
 }
 .productPage__description {
   width: 50%;
@@ -29,4 +36,32 @@ figure {
   width: fit-content;
   align-items: flex-start;
   padding: 10px 20px 0 20px;
+}
+.priceDiscount {
+  color: white;
+}
+.PriceRaye {
+  font-size: smaller;
+  margin-top: 3px;
+}
+
+.tag-sale {
+  background-color: #e20c64;
+  width: 103px;
+  height: 161px;
+  position: absolute;
+  color: #fff;
+  right: -39px;
+  z-index: 9;
+  top: -56px;
+  transform: rotate(137deg);
+}
+
+.tag-sale::before {
+  content: "PROMO";
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  transform-origin: top center;
+  transform: rotate(222.5deg) translateX(-52px) translateY(-70px);
 }

@@ -7,16 +7,13 @@ import Sidebar from "../components/menu-filter";
 import categorie from "../components/menu-filter";
 import Card from "../components/card";
 
-
-
-
 class Cardrate extends React.Component {
   state = {
     search: "",
     image: [],
     compenent: true,
     image1: [],
-    image2:[],
+    image2: [],
   };
 
   constructor(props) {
@@ -76,90 +73,92 @@ class Cardrate extends React.Component {
   }
 
   componentDidMount() {
-    this.fetch()
-    this.fetch_deux()
-    this.fetch_trois()
-
+    this.fetch();
+    this.fetch_deux();
+    this.fetch_trois();
   }
   fetch() {
-    fetch('https://otakod.es/hetic/ecommerce-api/products?limit=4&rating_min=5'
+    fetch(
+      "https://otakod.es/hetic/ecommerce-api/products?limit=4&rating_min=5&stock_min=6&discount=0"
     )
       .then((response) => response.json())
       .then((dataa) => {
         this.setState(() => {
           return {
             image: dataa.products,
-/*             search: this.props.bar,
+            /*             search: this.props.bar,
             compenent: false, */
           };
         });
       });
-      console.log(categorie)
+    console.log(categorie);
   }
   fetch_deux() {
-    fetch('https://otakod.es/hetic/ecommerce-api/products?limit=4&stock_min=5'
+    fetch(
+      "https://otakod.es/hetic/ecommerce-api/products?limit=4&stock_min=1&stock_max=5"
     )
       .then((response) => response.json())
       .then((dataa) => {
         this.setState(() => {
           return {
             image1: dataa.products,
-/*             search: this.props.bar,
+            /*             search: this.props.bar,
             compenent: false, */
           };
         });
       });
-      console.log(categorie)
+    console.log(categorie);
   }
   fetch_trois() {
-    fetch('https://otakod.es/hetic/ecommerce-api/products?limit=4&discount=1'
+    fetch(
+      "https://otakod.es/hetic/ecommerce-api/products?limit=4&discount=1&stock_min=6"
     )
       .then((response) => response.json())
       .then((dataa) => {
         this.setState(() => {
           return {
             image2: dataa.products,
-/*             search: this.props.bar,
+            /*             search: this.props.bar,
             compenent: false, */
           };
         });
       });
-      console.log(categorie)
+    console.log(categorie);
   }
 
   render() {
-    return (<>
-     <h2>les Mieux Notés</h2>
-      <div className="flex-wrap d-flex justify-content-center p-5">
-        {this.state.image.map((anime, index) => {
-          return (
-            <div key={index} className=" d-flex">
-               <Card data={anime} />
-            </div>
-          );
-        })}
-      </div>
-      <h2>les dernieres offres</h2>
-      <div className="flex-wrap d-flex justify-content-center p-5">
-        {this.state.image1.map((anime, index) => {
-          return (
-            <div key={index} className=" d-flex">
-               <Card data={anime} />
-            </div>
-          );
-        })}
-      </div>
-      <h2>Bon plan</h2>
-      <div className="flex-wrap d-flex justify-content-center p-5">
-        {this.state.image2.map((anime, index) => {
-          return (
-            <div key={index} className=" d-flex">
-               <Card data={anime} />
-            </div>
-          );
-        })}
-      </div>
-      
+    return (
+      <>
+        <h2>les Mieux Notés</h2>
+        <div className="flex-wrap d-flex justify-content-center p-5">
+          {this.state.image.map((anime, index) => {
+            return (
+              <div key={index} className=" d-flex">
+                <Card data={anime} />
+              </div>
+            );
+          })}
+        </div>
+        <h2>les dernieres chances</h2>
+        <div className="flex-wrap d-flex justify-content-center p-5">
+          {this.state.image1.map((anime, index) => {
+            return (
+              <div key={index} className=" d-flex">
+                <Card data={anime} />
+              </div>
+            );
+          })}
+        </div>
+        <h2>Bon plan</h2>
+        <div className="flex-wrap d-flex justify-content-center p-5">
+          {this.state.image2.map((anime, index) => {
+            return (
+              <div key={index} className=" d-flex">
+                <Card data={anime} />
+              </div>
+            );
+          })}
+        </div>
       </>
     );
   }
