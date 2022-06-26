@@ -39,7 +39,6 @@ export default class Card extends React.Component {
 
   Click_Buy_Stockage() {
     let tab = [];
-    console.log(tab);
     let obj = {
       id: this.props.data.id,
       name: this.props.data.title,
@@ -49,12 +48,21 @@ export default class Card extends React.Component {
     };
 
     tab.push(obj);
-
+    let init = false;
     if (JSON.parse(localStorage.getItem("Product : ")) !== null) {
       let New_data = JSON.parse(localStorage.getItem("Product : "));
-      New_data.push(obj);
+      New_data.map((dataa, index) => {
+        let name = JSON.stringify(New_data[index].name);
+
+        if (New_data[index].name == this.props.data.title) {
+          init = true;
+          New_data[index].count += 1;
+        }
+      });
+      if (init === false) {
+        New_data.push(obj);
+      }
       localStorage.setItem("Product : ", JSON.stringify(New_data));
-      console.log(New_data);
     }
 
     if (JSON.parse(localStorage.getItem("Product : ")) === null) {
@@ -100,7 +108,7 @@ export default class Card extends React.Component {
             <Link
               to={`productPage/${this.state.new.id}`}
               id={this.state.new.id}
-            > 
+            >
               <img
                 className="img"
                 src={this.props.data.images.thumbs[0]}

@@ -3,7 +3,7 @@
 }
 .productPage {
   display: flex;
-  padding: 50px;
+  padding: 27px;
   font-family: "oswald";
 }
 .productPage__wrapper {
@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 
-figure {
+.visuel__produit {
   display: flex;
   flex-direction: column;
   gap: 30px;

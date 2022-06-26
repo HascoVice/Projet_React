@@ -7,25 +7,37 @@
 html,
 body {
   background: #e3e3d8;
-  font-family: sans-serif;
+  font-family: "leckerli_1";
 }
 .bandeau_cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 44px;
+  gap: 40px;
   margin: auto;
 }
-.bandeau__title {
+
+h2 {
   font-family: "oswald";
-  padding: 2rem 5rem 1rem 8rem;
+  padding: 2rem 10rem 1rem 8rem;
   transform: scaleY(1.5);
 }
 .wrapper__cards {
   display: flex;
   flex-direction: column;
-  background-color: rgb(232 221 123 / 29%);
+  /* background-color: hsl(0deg 1% 51% / 63%); */
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   margin: 32px;
-  padding: 10px 10px;
+  padding: 30px 20px;
 }
 .wrapper__card {
   width: 200px;

@@ -130,7 +130,7 @@ class Cardrate extends React.Component {
     return (
       <>
         <h2>les Mieux Notés</h2>
-        <div className="flex-wrap d-flex justify-content-center p-5">
+        <div className="flex-wrap d-flex justify-content-center p-3 ">
           {this.state.image.map((anime, index) => {
             return (
               <div key={index} className=" d-flex">
@@ -140,7 +140,7 @@ class Cardrate extends React.Component {
           })}
         </div>
         <h2>les dernieres chances</h2>
-        <div className="flex-wrap d-flex justify-content-center p-5">
+        <div className="flex-wrap d-flex justify-content-center p-3 ">
           {this.state.image1.map((anime, index) => {
             return (
               <div key={index} className=" d-flex">
@@ -149,8 +149,8 @@ class Cardrate extends React.Component {
             );
           })}
         </div>
-        <h2>Bon plan</h2>
-        <div className="flex-wrap d-flex justify-content-center p-5">
+        <h2>Les bons plans</h2>
+        <div className="flex-wrap d-flex justify-content-center p-3 ">
           {this.state.image2.map((anime, index) => {
             return (
               <div key={index} className=" d-flex">
