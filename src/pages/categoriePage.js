@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../components/card";
+<<<<<<< Updated upstream
 import "bootstrap/dist/css/bootstrap.min.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import Sidebar from "../components/menu-filter";
@@ -7,6 +8,8 @@ import "../pages/categoriePage.css";
 import categorie from "../components/menu-filter";
 
 
+=======
+>>>>>>> Stashed changes
 
 class CategoriePage extends React.Component {
   state = {
@@ -90,7 +93,11 @@ class CategoriePage extends React.Component {
         {this.state.image.map((anime, index) => {
           return (
             <div key={index} className=" d-flex">
+<<<<<<< Updated upstream
               <Card data={anime} />
+=======
+              <Card toto={anime} func={this.localStorage} data={anime} />
+>>>>>>> Stashed changes
             </div>
           );
         })}

@@ -105,8 +105,14 @@ html, body {
 .wrapper__card .container_new .bottoom .right .details {
   padding: 20px;
   float: right;
+<<<<<<< Updated upstream
 /*     width: calc(70% - 40px);
 */}
+=======
+  /*     width: calc(70% - 40px);
+*/
+}
+>>>>>>> Stashed changes
 .wrapper__card .container_new .bottoom .right .done {
   width: calc(30% - 2px);
   float: left;
@@ -247,6 +253,20 @@ input[type="number"] {
   transition: background-position 1s steps(28);
   transition-duration: 0s;
 }
+<<<<<<< Updated upstream
 .priceDiscount { color: red; } 
 .PriceRaye{ text-decoration: line-through; } 
 .allPrice{ display: flex; justify-content: center; gap: 5px; }
+=======
+.priceDiscount {
+  color: red;
+}
+.PriceRaye {
+  text-decoration: line-through;
+}
+.allPrice {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+>>>>>>> Stashed changes

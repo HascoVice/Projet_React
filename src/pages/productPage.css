@@ -1,9 +1,14 @@
 * {
   color: black;
 }
-section {
+.productPage {
   display: flex;
   padding: 50px;
+}
+.productPage__wrapper {
+  display: flex;
+  padding: 30px;
+  background-color: white;
 }
 figure {
   display: flex;
@@ -13,4 +18,15 @@ figure {
 }
 .productPage__description {
   width: 50%;
+}
+.buy {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background-color: #e20c64;
+  font-size: larger;
+  font-weight: bold;
+  width: fit-content;
+  align-items: flex-start;
+  padding: 10px 20px 0 20px;
 }

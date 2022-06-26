@@ -15,8 +15,8 @@ class App extends React.Component {
     search: "",
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.test = this.test.bind(this);
   }
 
@@ -29,7 +29,7 @@ class App extends React.Component {
     });
   }
 
-  render() {
+  render(props) {
     return (
       <>
         <div className="wrapper__homePage">
@@ -50,9 +50,10 @@ class App extends React.Component {
             <Route path="/Panier">
               <ShoppingCartPage />
             </Route>
-            <Route path="/productPage">
-              <ProductPage />
-            </Route>
+            <Route
+              path="/categoriePage/productPage/:id"
+              component={ProductPage}
+            ></Route>
           </Switch>
 
           <Footer />

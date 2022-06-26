@@ -1,23 +1,69 @@
 import React from "react";
 import Reassur from "../components/reassur";
+
 import "../pages/productPage.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
+
 class ProductPage extends React.Component {
   state = {
     hasClicked: false,
     hasClickedBuy: false,
     hasClickedBuyNum: 0,
-    image: null,
+    images: null,
     tableau: [],
+    compenent: false,
+    item: [],
   };
 
   constructor(props) {
     super(props);
-    this.click_Buy = this.click_Buy.bind(this);
 
+    this.click_Buy = this.click_Buy.bind(this);
     this.Click_Buy_Stockage = this.Click_Buy_Stockage.bind(this);
+
+    this.componentDidMount = this.componentDidMount.bind(this);
+    //this.componentDidUpdate = this.componentDidUpdate.bind(this);
+    this.handleFetch = this.handleFetch.bind(this);
+  }
+
+  componentDidMount() {
+    const { id } = this.props.match.params;
+    this.handleFetch(id);
+    console.log(id);
+    console.log("received " + this.props.match.params.id);
+  }
+  // componentDidUpdate() {
+  //   const { id } = this.props.match.params;
+  //   if (this.state.compenent === true) {
+  //     this.handleFetch(id);
+  //   }
+
+  //   if (this.state.compenent === false) {
+  //     if (this.props.json !== this.state.item) {
+  //       this.handleFetch(id);
+  //     }
+  //     return;
+  //   }
+  // }
+  handleFetch(id) {
+    fetch("https://otakod.es/hetic/ecommerce-api/products/" + id)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+
+        this.setState((state) => {
+          return {
+            search: "",
+            compenent: false,
+            item: data,
+            images: data.images.thumbs,
+          };
+        });
+      });
   }
 
   click_Buy() {
@@ -52,6 +98,7 @@ class ProductPage extends React.Component {
       localStorage.setItem("Product : ", JSON.stringify(tab));
     }
   }
+
   render() {
     let buy = "bottoom clicked";
 
@@ -64,47 +111,49 @@ class ProductPage extends React.Component {
     return (
       <>
         <section className="productPage">
-          {/* image différentes à intégrer en fetch  */}
-          <figure>
-            <img
-              // src={this.props.data.images.thumbs[0]}
-              alt="visuel produit"
-            ></img>
-            <img
-              // src={this.props.data.images.thumbs[1]}
-              alt="visuel produit"
-            ></img>
-            <img
-              // src={this.props.data.images.thumbs[2]}
-              alt="visuel produit"
-            ></img>
-          </figure>
-          {/* image en gros plan */}
-          <figure>
-            <img src="" alt="image produit"></img>
-          </figure>
-          <div className="productPage__description">
-            <h1 className="productPage__description__title">
-              {/* {this.props.data.title} */} figurine
-            </h1>
-            <div className="productPage__description__avis">coeur</div>
-            <p className="productPage__description__description">
-              Le lorem ipsum est, en imprimerie, une suite de mots sans
-              signification utilisée à titre provisoire pour calibrer une mise
-              en page, le texte définitif venant remplacer le faux-texte dès
-              qu'il est prêt ou que la mise en page est achevée. Généralement,
-              on utilise un texte en faux latin, le Lorem ipsum ou Lipsum.
-            </p>
-            <div
-              onClick={() => {
-                this.Click_Buy_Stockage();
-                this.click_Buy();
-              }}
-              className="buy"
-            >
-              {/* <p>{this.props.data.price}</p> */}
-              <p>price</p>
-              <i className="material-icons">add_shopping_cart</i>
+          <div className="productPage__wrapper">
+            {/* image différentes à intégrer en fetch  */}
+            <figure>
+              <img
+                //src={this.state.data.images.thumbs[0]}
+                alt="visuel produit"
+              ></img>
+              <img
+                // src={this.state.data.images.thumbs[1]}
+                alt="visuel produit"
+              ></img>
+              <img
+                // src={this.props.data.images.thumbs[2]}
+                alt="visuel produit"
+              ></img>
+            </figure>
+            {/* image en gros plan */}
+            <figure>
+              <img src="" alt="visuel produit"></img>
+            </figure>
+            {/* nomenclature du produit */}
+            <div className="productPage__description">
+              <h1 className="productPage__description__title">
+                {this.state.item.title}
+              </h1>
+              <div className="productPage__description__avis">
+                {this.state.item.rating}
+              </div>
+              <p className="productPage__description__description">
+                {this.state.item.description}
+              </p>
+              <div
+                onClick={() => {
+                  this.Click_Buy_Stockage();
+                  this.click_Buy();
+                }}
+                className="buy"
+              >
+                <i className="material-icons">add_shopping_cart</i>
+                <p>Ajouter au panier -</p>
+                <p>{this.state.item.price}</p>
+                <p>{this.state.item.priceDiscount}</p>
+              </div>
             </div>
           </div>
         </section>

@@ -7,7 +7,7 @@
   background-image: url("./assets/background_comics_pc.jpg");
   background-repeat: repeat;
   height: 100vh;
-  overflow: scroll;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 form {
