@@ -84,19 +84,19 @@ console.log(event.target.value)
   </div>
   <li className="ulli">
     <div className="div">
-      <input className="inputChecking" id="c1" type="radio" name="categorie" onChange={this.Input} value="note" />
+      <input className="inputChecking" id="c1" type="radio" name="category" onChange={this.Input} value="note" />
       <label className="labelmenu" htmlFor="c1">Les mieux notés</label>
     </div>
   </li>
   <li className="ulli">
     <div className="div">
-      <input className="inputChecking" id="c1" type="radio" name="categorie" onChange={this.Input} value="price" />
+      <input className="inputChecking" id="c1" type="radio" name="category" onChange={this.Input} value="price" />
       <label className="labelmenu" htmlFor="c1">Bon plan</label>
     </div>
   </li>
   <li className="ulli">
     <div className="div">
-      <input className="inputChecking" id="c1" type="radio" name="categorie" onChange={this.Input} value="stock" />
+      <input className="inputChecking" id="c1" type="radio" name="category" onChange={this.Input} value="stock" />
       <label className="labelmenu" htmlFor="c1">Stock épuisé</label>
     </div>
   </li>

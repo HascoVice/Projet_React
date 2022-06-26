@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel'
 import "./Slider.css";
+import Goku1 from "../assets/carrousel_img/dragon-4.png";
+import Goku2 from "../assets/carrousel_img/dragon-2.png";
+import Goku3 from "../assets/carrousel_img/dragon-3.png";
+import btnslider from "../assets/carrousel_img/gauche-droite.png";
 
 
 function Slider () {
@@ -10,20 +14,20 @@ function Slider () {
     const datas = [
         {
             id: 1,
-            image: `./Image/1.jfif`,
+            image: Goku1,
             title: "Titre du slider 1",
             text: `lorem ipsum dolor sit`
         },
         {
             id: 2,
-            image: `${baseURL}2.jpeg`,
+            image: Goku2,
             title: "Titre du slider 1",
             text: `lorem ipsum dolor sit`
         },
 
         {
             id: 3,
-            image: `${baseURL}1.jpeg`,
+            image: Goku3,
             title: "Titre du slider 1",
             text: `lorem ipsum dolor sit`
         },
@@ -32,13 +36,19 @@ function Slider () {
     return (
         <Carousel autoPlay interval={4000} infiniteLoop thumbWidth={120} showIndicators={false} showStatus={false}>
             {datas.map(slide => (
-                <div key={slide.id}>
+                <>
+                <div className='sliderbouge' key={slide.id}>
                     <img src={slide.image} alt=""/>
-                    <div className='overlay'>
-                        <h2 className='overlay_title'>{slide.title}</h2>
-                        <p className='overlay_text'>{slide.text}</p>
-                    </div>     
                 </div>
+                <div className='div-slider'>
+                    <img className="btn-slider-gauche"src={btnslider} alt=""/>
+    
+                </div>
+                <div className='div-slider'>
+                <img className="btn-slider-droite"src={btnslider} alt=""/>
+                </div>
+                
+                </>
 
             ))}
         </Carousel>
