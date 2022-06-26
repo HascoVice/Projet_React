@@ -106,7 +106,7 @@ class Sidebar extends React.Component {
                 value="stock"
               />
               <label className="labelmenu" htmlFor="f1">
-                Stock épuisé
+                Tous les produits disponibles
               </label>
             </div>
           </li>
