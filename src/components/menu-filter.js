@@ -17,7 +17,7 @@ class Sidebar extends React.Component {
   render() {
     return (
       <div className="menu-filter">
-        <p className="entete">Trier par:</p>
+        <p className="entête">Trier par:</p>
 
         <ul className="ul__menu">
           <li className="ulli">

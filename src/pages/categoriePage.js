@@ -12,7 +12,9 @@ class CategoriePage extends React.Component {
     search: "",
     image: [],
     compenent: true,
-    staate : "false"
+    staate: "false",
+    page: 1,
+    Total_page: null,
   };
 
   constructor(props) {
@@ -21,6 +23,8 @@ class CategoriePage extends React.Component {
     this.searchBar = this.searchBar.bind(this);
     this.Fetch_input = this.Fetch_input.bind(this);
     this.Fetch_param = this.Fetch_param.bind(this);
+    this.Moins = this.Moins.bind(this);
+    this.Plus = this.Plus.bind(this);
   }
 
   searchBar() {
@@ -32,10 +36,8 @@ class CategoriePage extends React.Component {
   }
 
   componentDidMount() {
-
-    if(this.props.bar != null){
+    if (this.props.bar != null) {
       this.fetch();
-
     }
   }
 
@@ -61,59 +63,81 @@ class CategoriePage extends React.Component {
 
     if (this.state.compenent === true) {
       this.fetch();
-      this.Fetch_input()
+      this.Fetch_input();
     }
 
     if (this.state.compenent === false) {
       if (this.props.bar !== this.state.search) {
         this.fetch();
-        this.Fetch_input()
-
+        this.Fetch_input();
       }
       return;
     }
   }
 
-  Fetch_input(data){
-    console.log(data)
-    if(data === "figurine"){
-      console.log(data)
-      this.Fetch_param("https://otakod.es/hetic/ecommerce-api/products?category=figurine")
-    }
-    else if(data === "deco"){
-      console.log(data)
-      this.Fetch_param("https://otakod.es/hetic/ecommerce-api/products?category=deco")
-    }
-    else if(data === "vetement"){
-      console.log(data)
-      this.Fetch_param("https://otakod.es/hetic/ecommerce-api/products?category=vetement")
-    }
-    else if( data === "note"){
-      this.Fetch_param("https://otakod.es/hetic/ecommerce-api/products?rating_min=5")
-    }
-    else if( data === "price"){
-      this.Fetch_param("https://otakod.es/hetic/ecommerce-api/products?discount=1")
-    }
-    else if (data === "stock"){
-      this.Fetch_param("https://otakod.es/hetic/ecommerce-api/products?stock_min=1")
+  Fetch_input(data) {
+    console.log(data);
+    if (data === "figurine") {
+      console.log(data);
+      this.Fetch_param(
+        "https://otakod.es/hetic/ecommerce-api/products?category=figurine"
+      );
+    } else if (data === "deco") {
+      console.log(data);
+      this.Fetch_param(
+        "https://otakod.es/hetic/ecommerce-api/products?category=deco"
+      );
+    } else if (data === "vetement") {
+      console.log(data);
+      this.Fetch_param(
+        "https://otakod.es/hetic/ecommerce-api/products?category=vetement"
+      );
+    } else if (data === "note") {
+      this.Fetch_param(
+        "https://otakod.es/hetic/ecommerce-api/products?rating_min=5"
+      );
+    } else if (data === "price") {
+      this.Fetch_param(
+        "https://otakod.es/hetic/ecommerce-api/products?discount=1"
+      );
+    } else if (data === "stock") {
+      this.Fetch_param(
+        "https://otakod.es/hetic/ecommerce-api/products?stock_min=1"
+      );
     }
   }
 
-  Fetch_param(url){
-    fetch(
-      url
-    )
+  Fetch_param(url) {
+    fetch(url)
       .then((response) => response.json())
       .then((dataa) => {
-        console.log(url)
+        console.log(url);
         this.setState(() => {
           return {
             image: dataa.products,
             search: this.props.bar,
             compenent: false,
+            Total_page: dataa.total_pages,
           };
         });
       });
+  }
+  Moins() {
+    this.setState((state) => {
+      return {
+        page: state.page - 1,
+        compenent: true,
+      };
+    });
+  }
+
+  Plus() {
+    this.setState((state) => {
+      return {
+        page: state.page + 1,
+        compenent: true,
+      };
+    });
   }
 
   fetch() {
@@ -128,6 +152,7 @@ class CategoriePage extends React.Component {
             image: dataa.products,
             search: this.props.bar,
             compenent: false,
+            Total_page: dataa.total_pages,
           };
         });
       });
@@ -141,14 +166,37 @@ class CategoriePage extends React.Component {
           <div>
             <Sidebar input={this.Fetch_input} />
           </div>
-          <div className="flex-wrap d-flex justify-content-center p-5">
-            {this.state.image.map((anime, index) => {
-              return (
-                <div key={index} className=" d-flex">
-                  <Card data={anime} />
-                </div>
-              );
-            })}
+          <div>
+            <div className="flex-wrap d-flex justify-content-center p-5">
+              {this.state.image.map((anime, index) => {
+                return (
+                  <div key={index} className=" d-flex">
+                    <Card data={anime} />
+                  </div>
+                );
+              })}
+            </div>
+            <div className="Pagin">
+              {this.state.Total_page != null ? (
+                <nav aria-label="Page navigation example margin">
+                  <ul class="pagination">
+                    <li onClick={this.Moins} class="page-item">
+                      <a class="page-link" href="#">
+                        Previous
+                      </a>
+                    </li>
+
+                    <li onClick={this.Plus} class="page-item">
+                      <a class="page-link" href="#">
+                        Next
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              ) : (
+                <div></div>
+              )}
+            </div>
           </div>
         </div>
       </>
