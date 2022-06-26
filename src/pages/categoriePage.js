@@ -1,15 +1,10 @@
 import React from "react";
 import Card from "../components/card";
-<<<<<<< Updated upstream
 import "bootstrap/dist/css/bootstrap.min.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import Sidebar from "../components/menu-filter";
 import "../pages/categoriePage.css";
 import categorie from "../components/menu-filter";
-
-
-=======
->>>>>>> Stashed changes
 
 class CategoriePage extends React.Component {
   state = {
@@ -68,7 +63,8 @@ class CategoriePage extends React.Component {
 
   fetch() {
     fetch(
-      "https://otakod.es/hetic/ecommerce-api/products?category=&search=" + this.props.bar
+      "https://otakod.es/hetic/ecommerce-api/products?category=&search=" +
+        this.props.bar
     )
       .then((response) => response.json())
       .then((dataa) => {
@@ -80,30 +76,26 @@ class CategoriePage extends React.Component {
           };
         });
       });
-      console.log(categorie)
+    console.log(categorie);
   }
 
   render() {
-    return (<>
-    <div className="Sidecard">
-    <div>
-        <Sidebar/>
-      </div>
-      <div className="flex-wrap d-flex justify-content-center p-5">
-        {this.state.image.map((anime, index) => {
-          return (
-            <div key={index} className=" d-flex">
-<<<<<<< Updated upstream
-              <Card data={anime} />
-=======
-              <Card toto={anime} func={this.localStorage} data={anime} />
->>>>>>> Stashed changes
-            </div>
-          );
-        })}
-      </div>
-      </div>
-      
+    return (
+      <>
+        <div className="Sidecard">
+          <div>
+            <Sidebar />
+          </div>
+          <div className="flex-wrap d-flex justify-content-center p-5">
+            {this.state.image.map((anime, index) => {
+              return (
+                <div key={index} className=" d-flex">
+                  <Card data={anime} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </>
     );
   }
