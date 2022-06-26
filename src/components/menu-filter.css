@@ -1,264 +1,278 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .ul__menu {
-    background-color: rgb(0, 0, 0);
-    max-width: 800px;
-    list-style: none;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.ul__menu {
+  background-color: #838181;
+  max-width: 800px;
+  list-style: none;
+  padding: 0;
+}
+.ulli {
+  padding: 15px 13px;
+}
 
- 
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type="checkbox"],
+  input[type="radio"] {
+    --active: #e30964;
+    --active-inner: #838181;
+
+    --border: #e30964;
+    --border-hover: #e30964;
+    --background: #e8dd7b;
+    --disabled: #f6f8ff;
+    --disabled-inner: #e1e6f9;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
   }
-  .ulli {
-    padding: 6px 10px;
+  input[type="checkbox"]:after,
+  input[type="radio"]:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+      opacity var(--d-o, 0.2s);
   }
-  
-  @supports (-webkit-appearance: none) or (-moz-appearance: none) {
-    input[type="checkbox"],
-    input[type="radio"] {
-      --active: #e30964;
-      --active-inner: black;
-  
-      --border: #e8dd7b;
-      --border-hover: #e8dd7b;
-      --background: #e8dd7b;
-      --disabled: #f6f8ff;
-      --disabled-inner: #e1e6f9;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      height: 21px;
-      outline: none;
-      display: inline-block;
-      vertical-align: top;
-      position: relative;
-      margin: 0;
-      cursor: pointer;
-      border: 1px solid var(--bc, var(--border));
-      background: var(--b, var(--background));
-      transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
-    }
-    input[type="checkbox"]:after,
-    input[type="radio"]:after {
-      content: "";
-      display: block;
-      left: 0;
-      top: 0;
-      position: absolute;
-      transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
-        opacity var(--d-o, 0.2s);
-    }
-    input[type="checkbox"]:checked,
-    input[type="radio"]:checked {
-      --b: var(--active);
-      --bc: var(--active);
-      --d-o: 0.3s;
-      --d-t: 0.6s;
-      --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
-    }
-    input[type="checkbox"]:disabled,
-    input[type="radio"]:disabled {
-      --b: var(--disabled);
-      cursor: not-allowed;
-      opacity: 0.9;
-    }
-    input[type="checkbox"]:disabled:checked,
-    input[type="radio"]:disabled:checked {
-      --b: var(--disabled-inner);
-      --bc: var(--border);
-    }
-    input[type="checkbox"]:disabled + label,
-    input[type="radio"]:disabled + label {
-      cursor: not-allowed;
-    }
-    input[type="checkbox"]:hover:not(:checked):not(:disabled),
-    input[type="radio"]:hover:not(:checked):not(:disabled) {
-      --bc: var(--border-hover);
-    }
-    input[type="checkbox"]:focus,
-    input[type="radio"]:focus {
-      box-shadow: 0 0 0 var(--focus);
-    }
-    input[type="checkbox"]:not(.switch),
-    input[type="radio"]:not(.switch) {
-      width: 21px;
-    }
-    input[type="checkbox"]:not(.switch):after,
-    input[type="radio"]:not(.switch):after {
-      opacity: var(--o, 0);
-    }
-    input[type="checkbox"]:not(.switch):checked,
-    input[type="radio"]:not(.switch):checked {
-      --o: 1;
-    }
-    input[type="checkbox"] + label,
-    input[type="radio"] + label {
-      font-size: 14px;
-      line-height: 21px;
-      display: inline-block;
-      vertical-align: top;
-      cursor: pointer;
-      margin-left: 4px;
-    }
-    input[type="checkbox"]:not(.switch) {
-      border-radius: 7px;
-    }
-    input[type="checkbox"]:not(.switch):after {
-      width: 5px;
-      height: 9px;
-      border: 2px solid var(--active-inner);
-      border-top: 0;
-      border-left: 0;
-      left: 7px;
-      top: 4px;
-      transform: rotate(var(--r, 20deg));
-    }
-    input[type="checkbox"]:not(.switch):checked {
-      --r: 43deg;
-    }
-    input[type="checkbox"].switch {
-      width: 38px;
-      border-radius: 11px;
-    }
-    input[type="checkbox"].switch:after {
-      left: 2px;
-      top: 2px;
-      border-radius: 50%;
-      width: 15px;
-      height: 15px;
-      background: var(--ab, var(--border));
-      transform: translateX(var(--x, 0));
-    }
-    input[type="checkbox"].switch:checked {
-      --ab: var(--active-inner);
-      --x: 17px;
-    }
-    input[type="checkbox"].switch:disabled:not(:checked):after {
-      opacity: 0.6;
-    }
-    input[type="radio"] {
-      border-radius: 50%;
-    }
-    input[type="radio"]:after {
-      width: 19px;
-      height: 19px;
-      border-radius: 50%;
-      background: var(--active-inner);
-      opacity: 0;
-      transform: scale(var(--s, 0.7));
-    }
-    input[type="radio"]:checked {
-      --s: 0.5;
-    }
+  input[type="checkbox"]:checked,
+  input[type="radio"]:checked {
+    --b: var(--active);
+    --bc: var(--active);
+    --d-o: 0.3s;
+    --d-t: 0.6s;
+    --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
   }
+  input[type="checkbox"]:disabled,
+  input[type="radio"]:disabled {
+    --b: var(--disabled);
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+  input[type="checkbox"]:disabled:checked,
+  input[type="radio"]:disabled:checked {
+    --b: var(--disabled-inner);
+    --bc: var(--border);
+  }
+  input[type="checkbox"]:disabled + label,
+  input[type="radio"]:disabled + label {
+    cursor: not-allowed;
+  }
+  input[type="checkbox"]:hover:not(:checked):not(:disabled),
+  input[type="radio"]:hover:not(:checked):not(:disabled) {
+    --bc: var(--border-hover);
+  }
+  input[type="checkbox"]:focus,
+  input[type="radio"]:focus {
+    box-shadow: 0 0 0 var(--focus);
+  }
+  input[type="checkbox"]:not(.switch),
+  input[type="radio"]:not(.switch) {
+    width: 21px;
+  }
+  input[type="checkbox"]:not(.switch):after,
+  input[type="radio"]:not(.switch):after {
+    opacity: var(--o, 0);
+  }
+  input[type="checkbox"]:not(.switch):checked,
+  input[type="radio"]:not(.switch):checked {
+    --o: 1;
+  }
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    font-size: 15px;
+    line-height: 21px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    margin-left: 4px;
+    padding: 5px;
+  }
+  input[type="checkbox"]:not(.switch) {
+    border-radius: 7px;
+  }
+  input[type="checkbox"]:not(.switch):after {
+    width: 5px;
+    height: 9px;
+    border: 2px solid var(--active-inner);
+    border-top: 0;
+    border-left: 0;
+    left: 7px;
+    top: 4px;
+    transform: rotate(var(--r, 20deg));
+  }
+  input[type="checkbox"]:not(.switch):checked {
+    --r: 43deg;
+  }
+  input[type="checkbox"].switch {
+    width: 38px;
+    border-radius: 11px;
+  }
+  input[type="checkbox"].switch:after {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--ab, var(--border));
+    transform: translateX(var(--x, 0));
+  }
+  input[type="checkbox"].switch:checked {
+    --ab: var(--active-inner);
+    --x: 17px;
+  }
+  input[type="checkbox"].switch:disabled:not(:checked):after {
+    opacity: 0.6;
+  }
+  input[type="radio"] {
+    border-radius: 50%;
+  }
+  input[type="radio"]:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--active-inner);
+    opacity: 0;
+    transform: scale(var(--s, 0.7));
+  }
+  input[type="radio"]:checked {
+    --s: 0.5;
+  }
+}
 
 .inputChecking {
-    margin-right: 5px;
-  }
-  .div {
-    color: white;
-    background: red; /* default color */
-    border-radius: 8px;
-  
-    /* "to left" / "to right" - affects initial color */
-    background: linear-gradient(to left, rgb(0, 0, 0) 50%, #e30964 50%) right;
-    background-size: 200%;
-    transition: 1s all;
-  }
-  .testcolorfull {
-    background-position: left;
-  }
-  .labelblack {
-    color:white;
-  }
-  .Price {
-    display: flex;
-  }
-  .Keyword {
-    display: flex;
-    justify-content: center;
-  }
-  .A {
-    color: #e8dd7b;
-    margin-top: 32px;
-    font-size: 1.3rem;
-    padding: 0 10px;
-  }
-  .form__grouped {
-    position: relative;
-    padding: 15px 0 0;
-    margin-top: 10px;
-    width: 50%;
-    background-color: black;
-  }
-  .form__fielded {
-    font-family: inherit;
-    width: 100%;
-    border: 2px solid #e8dd7b;
-    outline: 0;
-    font-size: 1rem;
-    color: #e8dd7b;
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
-  }
-  .form__fielded::placeholder {
-    color: transparent;
-  }
-  .form__fielded:placeholder-shown ~ .form__label {
-    font-size: 1.3rem;
-    cursor: text;
-    top: 20px;
-    left: 5px;
-  }
-  .form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: #e8dd7b;
-  }
-  .form__fielded:focus {
-    padding-bottom: 6px;
-    font-weight: 700;
-    border-width: 3px;
-    border-image: linear-gradient(to right, #e30964, #e30964);
-    border-image-slice: 1;
-  }
-  .form__fielded:focus ~ .form__label {
-    position: absolute;
-    top: -5px;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: #e30964;
-    font-weight: 700;
-  }
-  /* reset input */
-  .form__fielded:required,
-  .form__fielded:invalid {
-    box-shadow: none;
-  }
-  /* demo */
-  .menu-filter {
-    position: sticky;
-    width: 300px;
-    height: 100vh;
-    background-color: black;
-    padding: 20px 20px;
-    overflow: auto;
-    top: 0;
-  }
-  .menu-filter p {
-    color: #e8dd7b;
-    text-decoration: underline;
-    text-align: center;
-  }
-  .labelmenu {
-    font-weight: bold;
-    color: #e8dd7b;
-  }
-  
-  
+  margin-right: 5px;
+}
+.div {
+  color: white;
+  background: red; /* default color */
+  border-radius: 8px;
+
+  /* "to left" / "to right" - affects initial color */
+  background: linear-gradient(to left, #838181 50%, #e30964 50%) right;
+  background-size: 200%;
+  transition: 1s all;
+}
+.testcolorfull {
+  background-position: left;
+}
+.labelblack {
+  color: white;
+}
+.Price {
+  display: flex;
+}
+.Keyword {
+  display: flex;
+  justify-content: center;
+}
+.A {
+  color: #e8dd7b;
+  margin-top: 32px;
+  font-size: 1.3rem;
+  padding: 0 10px;
+}
+.form__grouped {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+  background-color: #838181;
+}
+.form__fielded {
+  font-family: inherit;
+  width: 100%;
+  border: 2px solid #e30964;
+  outline: 0;
+  font-size: 1rem;
+  color: #e8dd7b;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__fielded::placeholder {
+  color: transparent;
+}
+.form__fielded:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+  left: 5px;
+}
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #e8dd7b;
+}
+.form__fielded:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #e30964, #e30964);
+  border-image-slice: 1;
+}
+.form__fielded:focus ~ .form__label {
+  position: absolute;
+  top: -5px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #e30964;
+  font-weight: 700;
+}
+/* reset input */
+.form__fielded:required,
+.form__fielded:invalid {
+  box-shadow: none;
+}
+/* demo */
+.menu-filter {
+  position: sticky;
+  width: 300px;
+  height: 100vh;
+  background-color: #838181;
+  padding: 20px 20px;
+  overflow: auto;
+  top: 0;
+}
+.menu-filter p {
+  color: #e8dd7b;
+  text-decoration: underline;
+  text-align: center;
+  position: sticky;
+}
+.labelmenu {
+  font-weight: bold;
+  color: #e8dd7b;
+}
+
+.labelmenu:hover {
+  font-weight: bold;
+  background-color: #e30964;
+  margin: 12px;
+  transition: 1.3s;
+  display: inline;
+}
+
+.entete {
+  font-size: 25px;
+  box-sizing: border-box;
+  width: 100%;
+  border: solid #e30964 5px;
+  padding: 5px;
+}
