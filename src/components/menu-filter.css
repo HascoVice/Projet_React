@@ -4,12 +4,10 @@
     box-sizing: border-box;
   }
   .ul__menu {
-    background-color: rgb(0, 0, 0);
+    background-color: #838181;
     max-width: 800px;
     list-style: none;
     padding: 0;
-
- 
   }
   .ulli {
     padding: 6px 10px;
@@ -19,10 +17,10 @@
     input[type="checkbox"],
     input[type="radio"] {
       --active: #e30964;
-      --active-inner: black;
+      --active-inner: #838181;
   
-      --border: #e8dd7b;
-      --border-hover: #e8dd7b;
+      --border: #e30964;
+      --border-hover: #e30964;
       --background: #e8dd7b;
       --disabled: #f6f8ff;
       --disabled-inner: #e1e6f9;
@@ -94,7 +92,7 @@
     }
     input[type="checkbox"] + label,
     input[type="radio"] + label {
-      font-size: 14px;
+      font-size: 25px;
       line-height: 21px;
       display: inline-block;
       vertical-align: top;
@@ -162,7 +160,7 @@
     border-radius: 8px;
   
     /* "to left" / "to right" - affects initial color */
-    background: linear-gradient(to left, rgb(0, 0, 0) 50%, #e30964 50%) right;
+    background: linear-gradient(to left, #838181 50%, #e30964 50%) right;
     background-size: 200%;
     transition: 1s all;
   }
@@ -190,12 +188,12 @@
     padding: 15px 0 0;
     margin-top: 10px;
     width: 50%;
-    background-color: black;
+    background-color: #838181;
   }
   .form__fielded {
     font-family: inherit;
     width: 100%;
-    border: 2px solid #e8dd7b;
+    border: 2px solid #e30964;
     outline: 0;
     font-size: 1rem;
     color: #e8dd7b;
@@ -246,7 +244,7 @@
     position: sticky;
     width: 300px;
     height: 100vh;
-    background-color: black;
+    background-color: #838181;
     padding: 20px 20px;
     overflow: auto;
     top: 0;
@@ -259,6 +257,28 @@
   .labelmenu {
     font-weight: bold;
     color: #e8dd7b;
+    font-size: 200px;
+    
+     
   }
+
+  .labelmenu:hover {
+    font-weight: bold;
+    background-color: #e30964;
+    margin: 12px;
+    transition: 1.3s;
+    display: inline;
+  
+     
+  }
+
+  .entête {
+    font-size: 30px;
+    box-sizing: border-box;
+    width: 100%;
+    border: solid #e30964 5px;
+    padding: 5px;
+  }
+
   
   
