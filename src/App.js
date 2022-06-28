@@ -55,6 +55,7 @@ class App extends React.Component {
               path="/categoriePage/productPage/:id"
               component={ProductPage}
             ></Route>
+            <Redirect to="/categoriePage/Boutique" />
           </Switch>
 
           <Footer />

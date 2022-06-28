@@ -11,9 +11,15 @@ ul {
 }
 #blog {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 40px;
+  position: relative;
+}
+.wrapper__articles {
+  display: flex;
+  flex-direction: row;
 }
 .bloghaut {
   display: flex;
@@ -25,11 +31,13 @@ ul {
   color: red;
 }
 .newsh3 {
+  position: absolute;
+  top: 40px;
   font-family: "oswald";
   color: black;
   font-weight: 700;
   font-size: 50px;
-  margin-left: 10%;
+  transform: scaleY(1.5);
 }
 .blogcontenu {
   display: flex;
@@ -44,6 +52,7 @@ ul {
   border: 1px solid beige;
   margin: 20px;
   cursor: pointer;
+  box-shadow: 5px 20px 30px rgb(0 0 0 / 43%);
 }
 .blogimg {
   width: 100%;

@@ -13,11 +13,11 @@ import {
 
 export default function Footer() {
   return (
-    <MDBFooter className="text-center" color="black" id="footer">
+    <MDBFooter className="text-center" color="white" id="footer">
       <MDBContainer className="p-4">
         <section className="mb-4 icone__RS">
           <a
-            className="btn btn-outline-dark btn-floating m-1 btn-hover"
+            className="btn btn-outline-white btn-floating m-1 btn-hover"
             href="#!"
             role="button"
           >
@@ -25,7 +25,7 @@ export default function Footer() {
           </a>
 
           <a
-            className="btn btn-outline-dark btn-floating m-1 btn-hover"
+            className="btn btn-outline-white btn-floating m-1 btn-hover"
             href="#!"
             role="button"
           >
@@ -33,7 +33,7 @@ export default function Footer() {
           </a>
 
           <a
-            className="btn btn-outline-dark btn-floating m-1 btn-hover"
+            className="btn btn-outline-white btn-floating m-1 btn-hover"
             href="#!"
             role="button"
           >
@@ -41,7 +41,7 @@ export default function Footer() {
           </a>
 
           <a
-            className="btn btn-outline-dark btn-floating m-1 btn-hover"
+            className="btn btn-outline-white btn-floating m-1 btn-hover"
             href="#!"
             role="button"
           >
@@ -49,7 +49,7 @@ export default function Footer() {
           </a>
 
           <a
-            className="btn btn-outline-dark btn-floating m-1 btn-hover"
+            className="btn btn-outline-white btn-floating m-1 btn-hover"
             href="#!"
             role="button"
           >
@@ -57,7 +57,7 @@ export default function Footer() {
           </a>
 
           <a
-            className="btn btn-outline-dark btn-floating m-1 btn-hover"
+            className="btn btn-outline-white btn-floating m-1 btn-hover"
             href="#!"
             role="button"
           >
@@ -79,15 +79,15 @@ export default function Footer() {
                   contrast
                   type="email"
                   label="Adresse Mail"
-                  className="form-dark"
-                  color="dark"
+                  className="form-white"
+                  color="white"
                 />
               </MDBCol>
 
               <div className="row-auto">
                 <MDBBtn
                   outline
-                  color="dark"
+                  color="white"
                   type="submit"
                   className="mb-4 btn-hover"
                 >
@@ -105,22 +105,22 @@ export default function Footer() {
 
               <ul className="list-unstyled mb-0 ">
                 <li>
-                  <a href="#!" className="text-black a_after_hover">
+                  <a href="#!" className="text-white a_after_hover">
                     Nouveautés
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-black a_after_hover">
+                  <a href="#!" className="text-white a_after_hover">
                     Figurines
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-black a_after_hover">
+                  <a href="#!" className="text-white a_after_hover">
                     Vêtements
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-black a_after_hover">
+                  <a href="#!" className="text-white a_after_hover">
                     Décorations
                   </a>
                 </li>
@@ -132,22 +132,22 @@ export default function Footer() {
 
               <ul className="list-unstyled">
                 <li>
-                  <a href="#!" className="text-black a_after_hover">
+                  <a href="#!" className="text-white a_after_hover">
                     Livraison
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-black a_after_hover">
+                  <a href="#!" className="text-white a_after_hover">
                     Politique des retours
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-black a_after_hover">
+                  <a href="#!" className="text-white a_after_hover">
                     Points fidélités
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-black a_after_hover">
+                  <a href="#!" className="text-white a_after_hover">
                     Infos légales
                   </a>
                 </li>

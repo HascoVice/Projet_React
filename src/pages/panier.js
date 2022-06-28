@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from "react";
 import Card_Panier from "../components/card_panier";
 import "./panier.css";
@@ -185,18 +186,10 @@ export default class Panier extends React.Component {
                               );
                             })}
                           </div>
-                          <div className="pt-5">
-                            <h6 className="mb-0">
-                              <a href="#!" className="text-body">
-                                <i className="fas fa-long-arrow-alt-left me-2" />
-                                continuer mes achats
-                              </a>
-                            </h6>
-                          </div>
                         </div>
                       </div>
-                      <div className="col-lg-4 bg-grey">
-                        <div className="p-5">
+                      <div className="col-lg-4 bg-grey ">
+                        <div className="p-5 wrapper__maCommande">
                           <h3 className="fw-bold mb-5 mt-2 pt-1">
                             Ma commande
                           </h3>
@@ -231,11 +224,22 @@ export default class Panier extends React.Component {
                           </div>
                           <button
                             type="button"
-                            className="btn btn-dark btn-block btn-lg"
+                            className="btn btn-dark btn-block btn-lg panier__btnValider"
                             data-mdb-ripple-color="dark"
                           >
                             Valider
                           </button>
+                          <div className="pt-5">
+                            <h6 className="mb-0">
+                              <a
+                                href="#!"
+                                className="text-body panier__btnBack"
+                              >
+                                <i className="fas fa-long-arrow-alt-left me-2" />
+                                continuer mes achats
+                              </a>
+                            </h6>
+                          </div>
                         </div>
                       </div>
                     </div>

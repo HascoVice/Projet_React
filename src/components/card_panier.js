@@ -61,7 +61,7 @@ export default class Panier extends React.Component {
   }
 
   Delete() {
-    this.props.Delete(this.state.name);
+    this.props.Delete(this.props.list.name);
     console.log("delete");
   }
 

@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Form } from "react-bootstrap";
-import "./modal_connexion.css"
-
+import "./modal_connexion.css";
 
 function ModalConnexion() {
   const [show, setShow] = useState(false);
@@ -17,12 +16,12 @@ function ModalConnexion() {
         Mon compte
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal className="modal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title id="modalTitle">Connexion</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form className="modal__form__inscription">
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>E-mail</Form.Label>
               <Form.Control
@@ -45,13 +44,13 @@ function ModalConnexion() {
         </Modal.Body>
         <Modal.Footer>
           <Button
-            id="button__sinscrire"
+            className="btn-primary"
             variant="secondary"
             onClick={handleClose}
           >
             S'inscrire
           </Button>
-          <Button id="button__seconnecter" onClick={handleClose}>
+          <Button className="btn-primary" onClick={handleClose}>
             Se connecter
           </Button>
         </Modal.Footer>

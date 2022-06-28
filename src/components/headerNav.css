@@ -13,12 +13,12 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 2vh 2vh 0.5vh 2vh;
-  color: white;
-  background-color: #838181;
+  color: black;
+  background-color: white;
 }
 .header h1 {
   font-family: "oswald";
-  color: white;
+  color: black;
   font-weight: 700;
   font-size: 30px;
   transform: scaleX(3);
@@ -43,11 +43,11 @@ button {
 .form {
   width: 200px;
 }
-.nav__input {
-  border: none;
+form .nav__input {
   border-radius: 10px;
   width: 77%;
   height: 30px;
+  border: 2px solid black;
 }
 .header__nav__icone {
   display: flex;
@@ -60,9 +60,14 @@ button {
   justify-content: center;
   gap: 15px;
 }
+.btn__submitSearch {
+  background-color: transparent;
+  border: none;
+}
+
 .btn-primary:focus {
-  color: black;
-  background: white;
+  color: white;
+  background: black;
 }
 
 /* s'affiche seulement en min-830 */
@@ -72,7 +77,7 @@ button {
 .nav__loupe {
   width: 1.875rem;
   height: 1.875rem;
-  color: white;
+  color: black;
   cursor: pointer;
   margin-bottom: 13px;
 }
@@ -83,7 +88,7 @@ button {
   width: 2.5rem;
   height: 2.5rem;
   font-size: 2.5rem;
-  color: white;
+  color: black;
   text-align: center;
   position: relative;
   cursor: pointer;
@@ -112,7 +117,7 @@ header nav {
 }
 a.menuDeroulant__link {
   text-decoration: none;
-  color: white;
+  color: black;
   font-size: 0.938rem;
 }
 
@@ -125,7 +130,8 @@ a.menuDeroulant__link.active {
 }
 .menuDeroulant__link:hover {
   padding: 0.675rem 5rem;
-  background-color: #87735c;
+  background-color: #9b2847;
+  color: white;
   font-size: medium;
 }
 header nav.active {
@@ -135,7 +141,7 @@ header nav.active {
   bottom: 60vh;
   width: 100%;
   height: fit-content;
-  background-color: #1b1d31;
+  background-color: white;
   z-index: 9000;
   transform: translateX(0);
 }
@@ -146,10 +152,10 @@ header nav.active {
   font-family: "oswald";
   font-size: 24px;
   font-weight: 700;
-  color: black;
+  color: white;
   padding: 0.6rem 0.6rem;
   margin: 0;
-  background: #e30964;
+  background: black;
   border-radius: 0;
   border: 0;
   letter-spacing: 0.02em;
@@ -158,8 +164,8 @@ header nav.active {
   text-transform: uppercase;
 }
 .nav-pills .nav-link.active {
-  background-color: #838181;
-  color: black;
+  background-color: #e10d64;
+  color: white;
   transition: background-color 1s;
 }
 
@@ -167,7 +173,7 @@ header nav.active {
   flex: 0;
 }
 .Nav-background {
-  background-color: #e30964;
+  background-color: black;
 }
 .nav {
   justify-content: center;

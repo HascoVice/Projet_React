@@ -73,9 +73,11 @@ export default class Card extends React.Component {
   render() {
     let heart = "heart is-active";
     let buy = "bottoom clicked";
+
     let PriceRaye;
     let Promo = "tag-saleDisable";
     let Stock = "tag-stockDisable";
+
     if (this.state.hasClicked === false) {
       heart = "heart";
     }
@@ -116,6 +118,7 @@ export default class Card extends React.Component {
               <img className="img" src={img} alt="" />
             </Link>
           </div>
+
           <div className={buy}>
             <div className="left">
               <Link

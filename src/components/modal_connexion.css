@@ -11,21 +11,29 @@
   height: 30px;
   text-align: center;
 }
-
+.btn__openModalConnexion:focus {
+  color: black;
+  background-color: white;
+}
 .btn-primary:hover {
   background-color: #e30964;
   border-color: #e30964;
   color: white;
 }
-.btn__submitSearch {
-  background-color: transparent;
-  border: none;
-}
+
 .form-control .me-sm-2 {
   border: none;
   border-radius: 4px;
   width: 1000%;
   height: 30px;
+}
+.form-control:focus {
+  border-color: #e30964;
+  box-shadow: inset 0px 0px 0px 1px #e30964;
+}
+.modal__form__inscription {
+  display: flex;
+  flex-direction: column;
 }
 
 /*  CSS de la modal Mon compte */
@@ -36,17 +44,18 @@
   font-size: 30px;
   margin: auto;
 }
-#button__seconnecter {
+.button__modal {
   background-color: #e30964;
   border: #e30964;
   font-family: "oswald";
 }
-#button__sinscrire {
-  font-family: "oswald";
-}
+
 .link__nouveauMDP {
   cursor: pointer;
   color: black;
+}
+.link__nouveauMDP:hover {
+  color: #e30964;
 }
 
 @media (max-width: 930px) {

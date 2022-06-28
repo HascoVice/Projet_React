@@ -9,4 +9,14 @@
 }
 .wrapper {
   background: url("../assets/background_comics_pc.jpg");
+  overflow: scroll;
+}
+.panier__btnValider {
+  background-color: #e30964;
+}
+.panier__btnBack {
+  margin-left: 10px;
+}
+.fas {
+  color: #e30964;
 }

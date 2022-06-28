@@ -1,6 +1,7 @@
 /* hover des icones des réseaux sociaux et boutons */
 #footer {
-  background-color: #838181;
+  background-color: black;
+  color: white;
 }
 section {
   padding: 0;
@@ -13,6 +14,7 @@ section {
 .footer__newsletter__wrapper {
   width: 100%;
   margin-left: 25%;
+  color: white;
 }
 .footer__newsletter {
   display: flex;
@@ -21,10 +23,10 @@ section {
   align-items: flex-start;
 }
 .form-outline.form-white .form-control ~ .form-notch div {
-  border-color: black;
+  border-color: white;
 }
 .form-outline.form-white .form-control ~ .form-label {
-  color: black;
+  color: white;
 }
 .newsletter__text__p {
   width: max-content;
@@ -39,8 +41,8 @@ button.btn-hover:hover {
   border-color: #e30964;
 }
 .form-control {
-  color: black;
-  border: black;
+  color: white;
+  border: 2px solid white;
 }
 [class*="btn-outline-"] {
   border-width: 1.4px;
@@ -58,7 +60,7 @@ ul a {
   width: 100%;
   height: 1px;
   margin-bottom: -2px;
-  background-color: black;
+  background-color: white;
   transform: scaleX(0);
   transform-origin: right;
   transition: all 0.3s;

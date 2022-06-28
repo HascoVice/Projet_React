@@ -8,22 +8,20 @@ import ModalConnexion from "../components/modal_connexion";
 import "./modal_connexion.css";
 import React from "react";
 import classNames from "classnames";
-import { Redirect } from 'react-router-dom';
-
+import { Redirect } from "react-router-dom";
 
 class HeaderNav extends React.Component {
   state = {
     clicked: "",
     input: "",
-    redirect: false
-
+    redirect: false,
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.setState({
-      redirect: false
-    })
-    this.renderRedirect()
+      redirect: false,
+    });
+    this.renderRedirect();
   }
 
   constructor(props) {
@@ -37,26 +35,27 @@ class HeaderNav extends React.Component {
   };
 
   renderRedirect = () => {
-    console.log('hi')
+    console.log("hi");
     if (this.state.redirect) {
-      console.log('hiiiiiiii')
+      console.log("hiiiiiiii");
 
-      return (<><Redirect to='/categoriePage/Boutique' />
-      </>)
-
+      return (
+        <>
+          <Redirect to="/categoriePage/Boutique" />
+        </>
+      );
     }
-  }
+  };
 
   ////////
   searchPrevent(event) {
     event.preventDefault();
     this.props.func(this.state.input);
     this.setState({
-      redirect: true
-    })
-    this.renderRedirect()
+      redirect: true,
+    });
+    this.renderRedirect();
     console.log(this.state.input);
-
   }
 
   searchBar(event) {
@@ -64,12 +63,10 @@ class HeaderNav extends React.Component {
       return {
         input: event.target.value,
       };
-      
     });
-    
   }
   /////////////
-  
+
   render() {
     return (
       <div className="section__headerNav">
@@ -88,14 +85,16 @@ class HeaderNav extends React.Component {
                 <ModalConnexion />
 
                 <Link to={"/Panier"}>
-                  <button className="btn-primary btn-panier">Mon panier</button>
+                  <button className="btn-primary btn btn-panier">
+                    Mon panier
+                  </button>
                 </Link>
                 <Link className="header__nav" to="/panier">
                   <img className="nav__panier" src={Panier} alt="mon panier" />
                 </Link>
               </div>
               <div className="header__nav__icone">
-              {this.renderRedirect()}
+                {this.renderRedirect()}
                 <form onSubmit={this.searchPrevent}>
                   <input
                     onChange={this.searchBar}
@@ -103,7 +102,6 @@ class HeaderNav extends React.Component {
                     className="form-control me-sm-2 nav__input"
                     placeholder="Search"
                   />
-                
 
                   <button type="submit" className="btn__submitSearch">
                     <img
