@@ -1,8 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./bandeau_homePage.css";
-import { data } from "autoprefixer";
-import Sidebar from "../components/menu-filter";
 import categorie from "../components/menu-filter";
 import Card from "../components/card";
 
