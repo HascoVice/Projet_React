@@ -17,7 +17,7 @@ class Sidebar extends React.Component {
   render() {
     return (
       <div className="menu-filter">
-        <p className="entête">Trier par:</p>
+        <p className="menu__trier__titre">Choississez la catégorie : </p>
 
         <ul className="ul__menu">
           <li className="ulli">
@@ -61,10 +61,11 @@ class Sidebar extends React.Component {
                 value="deco"
               />
               <label className="labelmenu" htmlFor="c1">
-                Decoration
+                Decorations
               </label>
             </div>
           </li>
+          <p className="menu__trier__titre">Trier par : </p>
           <li className="ulli">
             <div className="div">
               <input
@@ -91,7 +92,7 @@ class Sidebar extends React.Component {
                 value="price"
               />
               <label className="labelmenu" htmlFor="e1">
-                Bon plan
+                Les bons plans
               </label>
             </div>
           </li>

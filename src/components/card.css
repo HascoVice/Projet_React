@@ -81,7 +81,7 @@ body {
   padding: 30px;
   color: #254053;
   transition: transform 0.5s;
-  margin: -10px 0 0 -20px;
+  margin: 1px 0 0 -2px;
 }
 .wrapper__card .container_new .bottoom .left .buy:hover {
   background: #a6cdde;

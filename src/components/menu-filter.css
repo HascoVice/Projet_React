@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 .ul__menu {
-  background-color: #838181;
   max-width: 800px;
   list-style: none;
   padding: 0;
@@ -12,30 +11,24 @@
 .ulli {
   padding: 15px 13px;
 }
+.ulli:hover {
+  transform: scaleY(1.2);
+}
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   input[type="checkbox"],
   input[type="radio"] {
     --active: #e30964;
-    --active-inner: #838181;
-
     --border: #e30964;
     --border-hover: #e30964;
-    --background: #e8dd7b;
-    --disabled: #f6f8ff;
-    --disabled-inner: #e1e6f9;
     -webkit-appearance: none;
     -moz-appearance: none;
     height: 21px;
-    outline: none;
     display: inline-block;
-    vertical-align: top;
-    position: relative;
-    margin: 0;
+    vertical-align: middle;
     cursor: pointer;
-    border: 1px solid var(--bc, var(--border));
+    border: 2px solid var(--bc, var(--border));
     background: var(--b, var(--background));
-    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
   }
   input[type="checkbox"]:after,
   input[type="radio"]:after {
@@ -90,19 +83,7 @@
   input[type="radio"]:not(.switch):checked {
     --o: 1;
   }
-  input[type="checkbox"] + label,
-  input[type="radio"] + label {
-    font-size: 15px;
-    line-height: 21px;
-    display: inline-block;
-    vertical-align: top;
-    cursor: pointer;
-    margin-left: 4px;
-    padding: 5px;
-  }
-  input[type="checkbox"]:not(.switch) {
-    border-radius: 7px;
-  }
+
   input[type="checkbox"]:not(.switch):after {
     width: 5px;
     height: 9px;
@@ -188,9 +169,7 @@ input[type="radio"]:not(.switch):checked {
 }
 input[type="checkbox"] + label,
 input[type="radio"] + label {
-  font-size: 15px;
   line-height: 21px;
-  display: inline-block;
   vertical-align: top;
   cursor: pointer;
   margin-left: 4px;
@@ -252,12 +231,11 @@ input[type="radio"]:checked {
 }
 .div {
   color: white;
-  background: red; /* default color */
+
   border-radius: 8px;
 
   /* "to left" / "to right" - affects initial color */
-  background: linear-gradient(to left, #838181 50%, #e30964 50%) right;
-  background-size: 200%;
+
   transition: 1s all;
 }
 .testcolorfull {
@@ -340,33 +318,36 @@ input[type="radio"]:checked {
   position: sticky;
   width: 300px;
   height: 100vh;
-  background-color: #838181;
-  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+
   overflow: auto;
   top: 0;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.2);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  margin: 0px;
 }
 .menu-filter p {
-  color: #e8dd7b;
+  color: black;
   text-decoration: underline;
   text-align: center;
 }
 .labelmenu {
   font-weight: bold;
-  color: #e8dd7b;
+  color: black;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
-.labelmenu:hover {
-  font-weight: bold;
-  background-color: #e30964;
-  margin: 12px;
-  transition: 1.3s;
-  display: inline;
-}
-
-.entête {
-  font-size: 25px;
-  box-sizing: border-box;
-  width: 100%;
-  border: solid #e30964 5px;
-  padding: 5px;
+.menu-filter .menu__trier__titre {
+  font-size: 24px;
+  text-align: left;
+  padding-top: 30px;
 }

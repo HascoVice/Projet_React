@@ -3,7 +3,26 @@ import React from "react";
 import Card_Panier from "../components/card_panier";
 import "./panier.css";
 import Reassur from "../components/reassur";
+import { useHistory } from "react-router-dom";
 
+function PassToMeMyLastRouterHistory() {
+  let historyObj = useHistory();
+  function handleClick() {
+    historyObj.goBack();
+  }
+  return (
+    <h6 className="mb-0">
+      <a
+        href="#!"
+        className="text-body panier__btnBack"
+        onClick={() => handleClick()}
+      >
+        <i className="fas fa-long-arrow-alt-left me-2" />
+        continuer mes achats
+      </a>
+    </h6>
+  );
+}
 export default class Panier extends React.Component {
   state = {
     local: JSON.parse(localStorage.getItem("Product : ")) || [],
@@ -229,17 +248,8 @@ export default class Panier extends React.Component {
                           >
                             Valider
                           </button>
-                          <div className="pt-5">
-                            <h6 className="mb-0">
-                              <a
-                                href="#!"
-                                className="text-body panier__btnBack"
-                              >
-                                <i className="fas fa-long-arrow-alt-left me-2" />
-                                continuer mes achats
-                              </a>
-                            </h6>
-                          </div>
+                          <div className="pt-5"></div>
+                          <PassToMeMyLastRouterHistory />
                         </div>
                       </div>
                     </div>

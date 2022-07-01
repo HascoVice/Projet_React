@@ -130,15 +130,27 @@ class ProductPage extends React.Component {
       count: 1,
     };
 
-    tab.push(obj);
-
+    let count = 0;
     if (JSON.parse(localStorage.getItem("Product : ")) !== null) {
       let New_data = JSON.parse(localStorage.getItem("Product : "));
-      New_data.push(obj);
+      New_data.map((dataa, index) => {
+        let name = JSON.stringify(New_data[index].name);
+        count += dataa.count;
+        if (New_data[index].name == this.state.item.title) {
+          New_data[index].count += 1;
+        }
+        tab.push(dataa.count);
+      });
       localStorage.setItem("Product : ", JSON.stringify(New_data));
-      console.log(New_data);
+      this.setState(() => {
+        return {
+          count: tab,
+          local: New_data || [],
+          new_count: count,
+        };
+      });
     }
-
+    tab.push(obj);
     if (JSON.parse(localStorage.getItem("Product : ")) === null) {
       localStorage.setItem("Product : ", JSON.stringify(tab));
     }
