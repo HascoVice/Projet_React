@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import HomePage from "../src/pages/homePage";
-import { Switch, Route, Link, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import CategoriePage from "../src/pages/categoriePage";
 import ProductPage from "../src/pages/productPage";
 import Panier from "../src/pages/panier";

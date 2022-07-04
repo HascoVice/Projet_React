@@ -5,15 +5,18 @@
 }
 .productPage__wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 30px;
   background-color: white;
   position: relative;
   overflow: hidden;
+  box-shadow: 10px 5px 5px rgb(0 0 0 / 50%);;
 }
 
 .visuel__list {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   gap: 30px;
   width: 10%;
@@ -93,7 +96,8 @@
 }
 .productPageheart.is-active {
   transition-duration: 1s;
-  background-position: 0px 0;
+  background-position:  -2800px 0;;
+  
 }
 
 .productPage__description__avis {
@@ -134,7 +138,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px;
+
 
   /*     width: calc(70% - 40px); */
 }
@@ -285,6 +289,7 @@
 .PriceRaye {
   font-size: smaller;
   margin-top: 3px;
+  margin-bottom: 0;
 }
 
 .tag-sale {

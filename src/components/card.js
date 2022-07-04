@@ -31,10 +31,17 @@ export default class Card extends React.Component {
 
   click_heart() {
     this.setState(() => {
-      return {
-        hasClicked: true,
-      };
-    });
+      if (this.state.hasClicked === false) {
+        return {
+          hasClicked: true,
+      }} else {
+        return {
+          hasClicked: false
+        }
+      }
+        
+      });
+   
   }
 
   Click_Buy_Stockage() {

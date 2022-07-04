@@ -4,26 +4,6 @@ import Img1 from "../assets/news/article 1.jpg";
 import Img2 from "../assets/news/article 2.jpg";
 import Img3 from "../assets/news/article 3.jpg";
 
-function Article() {
-  return (
-    <div className="blogbox">
-      <div className="blogimg">
-        <img src="https://placewaifu.com/image/200" alt="phto article" />
-      </div>
-      <div className="blogtext">
-        <span>08 juin/Web Design</span>
-        <a href="#" className="blogtitle">
-          Je suis pas beau mais gentil Je suis pas beau mais gentil heh?
-        </a>
-        <p>
-          Sa ressemble a du html mais c'est n'est pas du html Sa ressemble a du
-          html mais c'est n'est pas du html
-        </p>
-        <a href="#"> Read More</a>
-      </div>
-    </div>
-  );
-}
 
 function Articles() {
   return (

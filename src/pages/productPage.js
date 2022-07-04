@@ -114,10 +114,17 @@ class ProductPage extends React.Component {
   }
   click_heart() {
     this.setState(() => {
-      return {
-        hasClicked: true,
-      };
-    });
+      if (this.state.hasClicked === false) {
+        return {
+          hasClicked: true,
+      }} else {
+        return {
+          hasClicked: false
+        }
+      }
+        
+      });
+   
   }
   Click_Buy_Stockage() {
     let tab = [];
@@ -165,10 +172,10 @@ class ProductPage extends React.Component {
     let Promo = "tag-saleDisable";
 
     console.log("images", images);
-
-    if (this.state.hasClicked === false) {
-      heart = "heart";
-    }
+if (this.state.hasClicked === false){
+  heart = "heart"
+}
+    
     if (this.state.hasClickedBuyNum % 2 === 0) {
       buy = "bottoom";
     } else if (this.state.hasClickedBuyNum % 2 === 1) {
